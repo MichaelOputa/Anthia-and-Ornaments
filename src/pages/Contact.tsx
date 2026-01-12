@@ -3,7 +3,7 @@ import { MapPin, MessageCircle, Clock } from 'lucide-react';
 export default function Contact() {
   const handleWhatsAppClick = () => {
     window.open(
-      'https://http://wa.me/2348124238750?text=Hello! I would like to get in touch with Anthia & Ornaments.',
+      'https://wa.me/2348124238750?text=Hello! I would like to get in touch with Anthia & Ornaments.',
       '_blank'
     );
   };

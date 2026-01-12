@@ -97,17 +97,15 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-lg">
                 <p>
-                  At Anthia & Ornaments, we curate pieces that speak without shouting.
-                  Jewelry that elevates.
+                  At Anthia & Ornaments, we're not just selling jewelry and clothing – we're
+                  sharing stories, celebrating culture, and creating lasting memories.
                 </p>
                 <p>
-                  Wristwatches that command presence.
-                  Clothing designed for movement, confidence, and ease.
+                  Every purchase supports local Nigerian artisans and helps preserve traditional
+                  craftsmanship techniques for future generations.
                 </p>
                 <p className="font-semibold text-amber-700">
-                  A unisex online store for those who understand that style is energy not gender.
-                  Every piece chosen to meet you at life’s moments and make them unforgettable.
-                  …occasions made better ✨
+                  Experience the perfect blend of tradition, quality, and contemporary elegance.
                 </p>
               </div>
             </div>

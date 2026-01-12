@@ -5,16 +5,74 @@ export default function Gallery() {
   const [activeTab, setActiveTab] = useState<'images' | 'videos'>('images');
 
   const galleryImages = [
-    '/images/bracelet_2.jpg',
-    '/images/bracelet_3.jpg',
-    '/images/bracelet_4.jpg',
+    {
+      url: '/images/bracelet_2.jpg',
+      title: 'Silver Bracelet Collection',
+      description: 'Elegant silver bracelets with premium craftsmanship',
+    },
+    {
+      url: '/images/bracelet_1.jpg',
+      title: 'Chain Bracelet Set',
+      description: 'Stylish chain design for everyday wear',
+    },
+    {
+      url: '/images/bracelet_3.jpg',
+      title: 'Gold Bracelet Set 2',
+      description: 'Luxury design highlights',
+    },
+    {
+      url: '/images/bracelet_4.jpg',
+      title: 'Silver Bracelet',
+      description: 'Modern elegance in silver',
+    },
+    {
+      url: '/images/knucklerings_1.jpg',
+      title: 'Knuckle Rings Collection',
+      description: 'Trendy knuckle rings for a bold statement',
+    },
+    {
+      url: '/images/wristwatch_1.jpg',
+      title: 'Wristwatch Collection',
+      description: 'Timeless wristwatches for every occasion',
+    },
+    {
+      url: '/images/clothing_1.jpg',
+      title: 'Ankara Maxi Dress',
+      description: 'Vibrant ankara fabric with elegant design',
+    },
+    {
+      url: '/images/eyeglass_1.png',
+      title: 'Premium Black Frame Sunglasses',
+      description: 'Sleek black frames with UV protection',
+    },
+    {
+      url: '/images/rings_1.jpg',
+      title: 'Statement Rings',
+      description: 'Bold and sophisticated ring designs',
+    },
   ];
 
   const galleryVideos = [
-    '/videos/bracelet-1.mp4',
-    '/videos/video-2.mp4',
-    '/videos/video-3.mp4',
-    '/videos/video-4.mp4',
+    {
+      url: '/videos/bracelet-1.mp4',
+      title: 'Collection Showcase 1',
+      description: 'Highlighting our exquisite jewelry pieces',
+    },
+    {
+      url: '/videos/clothing_1.mp4',
+      title: 'Collection Showcase 2',
+      description: 'Styling tips and fashion inspiration',
+    },
+    {
+      url: '/videos/wristwatch_1.mp4',
+      title: 'Collection Showcase 3',
+      description: 'Timeless wristwatches for every occasion',
+    },
+    {
+      url: '/videos/wristwatch_2.mp4',
+      title: 'Collection Showcase 4',
+      description: 'Explore our elegant wristwatch designs',
+    },
   ];
 
   return (
@@ -62,20 +120,26 @@ export default function Gallery() {
           {activeTab === 'images' && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {galleryImages.map((image, index) => (
-                <div
+                <a
                   key={index}
-                  className="group relative aspect-square bg-gradient-to-br from-amber-100 to-stone-200 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer"
+                  href={image.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-square bg-gradient-to-br from-amber-100 to-stone-200 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer block"
                 >
                   <img
-                    src={image}
-                    alt={`Gallery ${index + 1}`}
-                    className="w-full h-full object-cover"
+                    src={image.url}
+                    alt={image.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                     }}
                   />
-                  <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity"></div>
-                </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                    <h3 className="text-white font-semibold text-lg mb-1">{image.title}</h3>
+                    <p className="text-gray-100 text-sm">{image.description}</p>
+                  </div>
+                </a>
               ))}
             </div>
           )}
@@ -83,22 +147,23 @@ export default function Gallery() {
           {activeTab === 'videos' && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {galleryVideos.map((video, index) => (
-                <div
+                <a
                   key={index}
-                  className="group relative aspect-video bg-gradient-to-br from-stone-100 to-amber-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative aspect-video bg-gradient-to-br from-stone-100 to-amber-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer block"
                 >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center p-4">
-                      <Video className="h-16 w-16 mx-auto mb-2 text-amber-600 opacity-50" />
-                      <p className="text-sm text-gray-600 font-medium mb-2">
-                        {video}
-                      </p>
-                      <p className="text-xs text-gray-500">
-                        Place your video file here
-                      </p>
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
+                    <div className="text-center p-4 z-10">
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-white/90 rounded-full group-hover:bg-white transition-colors mb-3">
+                        <Video className="h-8 w-8 text-amber-600" />
+                      </div>
+                      <h3 className="text-white font-semibold text-lg mb-1">{video.title}</h3>
+                      <p className="text-gray-100 text-sm">{video.description}</p>
                     </div>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           )}

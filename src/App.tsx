@@ -5,6 +5,7 @@ import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import Jewelry from './pages/Jewelry';
 import Clothing from './pages/Clothing';
+import Eyeglasses from './pages/Eyeglasses';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/jewelry" element={<Jewelry />} />
           <Route path="/clothing" element={<Clothing />} />
+          <Route path="/eyeglasses" element={<Eyeglasses />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

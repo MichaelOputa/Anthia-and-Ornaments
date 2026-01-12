@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ShoppingBag, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -8,14 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <ShoppingBag className="h-5 w-5 text-amber-500" />
               <span className="text-xl font-serif font-semibold text-white">
                 Anthia & Ornaments
               </span>
             </div>
             <p className="text-sm text-gray-400">
               Elegant Nigerian jewelry and fashion for the modern woman.
-              OCCASION MADE BETTER.
+              Celebrating craftsmanship, quality, and timeless style.
             </p>
             <div className="flex items-center space-x-2 mt-4">
               <MapPin className="h-4 w-4 text-amber-500" />

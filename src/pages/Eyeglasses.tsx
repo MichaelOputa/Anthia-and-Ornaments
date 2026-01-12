@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ExternalLink, MessageCircle } from 'lucide-react';
 import ImageModal from '../components/ImageModal';
 
-export default function Clothing() {
+export default function Eyeglasses() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
@@ -10,54 +10,36 @@ export default function Clothing() {
     title: string;
   } | null>(null);
 
-  const clothingItems = [
+  const eyeglassItems = [
     {
-      name: 'Ankara Maxi Dress',
-      category: 'Dresses',
-      description: 'Vibrant ankara fabric with elegant design',
-      image: '/images/clothing_1.jpg',
+      name: 'Premium Black Frame Sunglasses',
+      description: 'Sleek black frames with UV protection for a contemporary look',
+      image: '/images/eyeglass_1.png',
+      price: '',
     },
     {
-      name: 'Elegant Jumpsuit',
-      category: 'Jumpsuits',
-      description: 'Sophisticated jumpsuit for any occasion',
-      image: '/images/clothing/jumpsuit-1.jpg',
+      name: 'Luxury Gold-Rimmed Sunglasses',
+      description: 'Elegant gold accents with gradient lenses for sophisticated style',
+      image: '/images/eyeglass_2.png',
+      price: '',
     },
     {
-      name: 'Traditional Gele Set',
-      category: 'Accessories',
-      description: 'Authentic traditional head wrap styling',
-      image: '/images/clothing/gele-1.jpg',
+        name: 'Classic Round Frame Eyeglasses',
+        description: 'Timeless round frames for a classic look',
+        image: '/images/eyeglass_3.png',
+        price: '',
     },
     {
-      name: 'Evening Gown',
-      category: 'Gowns',
-      description: 'Elegant evening wear with premium fabrics',
-      image: '/images/clothing/gown-1.jpg',
+        name: 'Modern Square Frame Eyeglasses',
+        description: 'Contemporary square frames for a bold statement',
+        image: '/images/eyeglass_4.png',
+        price: '',
     },
     {
-      name: 'Two-Piece Set',
-      category: 'Sets',
-      description: 'Coordinated top and bottom combination',
-      image: '/images/clothing/set-1.jpg',
-    },
-    {
-      name: 'Lace Blouse',
-      category: 'Tops',
-      description: 'Delicate lace with intricate details',
-      image: '/images/clothing/blouse-1.jpg',
-    },
-    {
-      name: 'Aso Ebi Ensemble',
-      category: 'Traditional',
-      description: 'Complete traditional outfit set',
-      image: '/images/clothing/asoebi-1.jpg',
-    },
-    {
-      name: 'Kaftan Dress',
-      category: 'Dresses',
-      description: 'Comfortable and stylish kaftan design',
-      image: '/images/clothing/kaftan-1.jpg',
+        name: 'Stylish Transparent Frame Eyeglasses',
+        description: 'Classic transparent frames for versatile wear',
+        image: '/images/eyeglass_5.png',
+        price: '',
     },
   ];
 
@@ -68,28 +50,28 @@ export default function Clothing() {
 
   return (
     <div className="min-h-screen pt-20">
-      <section className="py-16 px-4 bg-gradient-to-br from-stone-50 to-amber-50">
+      <section className="py-16 px-4 bg-gradient-to-br from-amber-50 to-stone-50">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
-            Clothing Collection
+            Eyeglasses Collection
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Embrace elegance with our carefully curated collection of premium fashion pieces, designed for the modern Nigerian woman.
+            Discover our premium selection of designer eyeglasses, crafted for style and comfort with premium lenses.
           </p>
         </div>
       </section>
 
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {clothingItems.map((item, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {eyeglassItems.map((item, index) => (
               <div
                 key={index}
                 className="group cursor-pointer"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <div className="relative aspect-[3/4] bg-gradient-to-br from-stone-100 to-amber-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                <div className="relative aspect-square bg-gradient-to-br from-gray-100 to-stone-200 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 mb-4">
                   <img
                     src={item.image}
                     alt={item.name}
@@ -101,7 +83,7 @@ export default function Clothing() {
                   />
                   <div
                     className={`absolute inset-0 bg-black transition-opacity duration-300 ${
-                      hoveredIndex === index ? 'opacity-20' : 'opacity-0'
+                      hoveredIndex === index ? 'opacity-30' : 'opacity-0'
                     }`}
                   ></div>
 
@@ -127,15 +109,15 @@ export default function Clothing() {
                   </div>
                 </div>
 
-                <div className="mt-4 text-center">
-                  <p className="text-xs text-amber-600 font-medium uppercase tracking-wide mb-1">
-                    {item.category}
-                  </p>
-                  <h3 className="text-lg font-serif font-semibold text-gray-900 mb-2">
+                <div className="space-y-2">
+                  <h3 className="text-xl font-serif font-bold text-gray-900">
                     {item.name}
                   </h3>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-600 leading-relaxed">
                     {item.description}
+                  </p>
+                  <p className="text-lg font-semibold text-amber-600">
+                    {item.price}
                   </p>
                 </div>
               </div>
@@ -144,16 +126,16 @@ export default function Clothing() {
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-gradient-to-br from-stone-50 to-amber-50">
+      <section className="py-16 px-4 bg-gradient-to-br from-amber-50 to-stone-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
-            Find Your Perfect Style
+            More Styles Coming Soon
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Get in touch with us to learn more about our clothing collection, sizes, and custom tailoring options.
+            We're constantly adding new eyeglass styles to our collection. Subscribe or contact us to be notified of new arrivals.
           </p>
           <a
-            href="https://wa.me/2348124238750?text=Hello! I'm interested in your clothing collection."
+            href="https://wa.me/2348124238750?text=I%20would%20like%20to%20know%20about%20new%20eyeglass%20collections%20coming%20soon."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors shadow-lg font-medium"
@@ -161,7 +143,7 @@ export default function Clothing() {
             <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
             </svg>
-            Chat on WhatsApp
+            Contact Us on WhatsApp
           </a>
         </div>
       </section>

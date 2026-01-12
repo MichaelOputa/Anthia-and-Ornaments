@@ -6,20 +6,20 @@ export default function Home() {
     {
       title: 'Exquisite Jewelry',
       description: 'Handcrafted pieces that tell your story',
-      image: '/images/bracelet_1.jpg',
+      image: '/images/bracelet_2.jpg',
       link: '/jewelry',
+    },
+    {
+      title: 'Designer Eyeglasses',
+      description: 'Premium frames for every style',
+      image: '/images/eyeglass_1.png',
+      link: '/eyeglasses',
     },
     {
       title: 'Elegant Fashion',
       description: 'Premium clothing for the modern woman',
-      image: '/images/clothing-featured-1.jpg',
+      image: '/images/clothing_1.jpg',
       link: '/clothing',
-    },
-    {
-      title: 'Nigerian Craftsmanship',
-      description: 'Quality that speaks for itself',
-      image: '/images/jewelry-featured-2.jpg',
-      link: '/about',
     },
   ];
 
@@ -33,12 +33,12 @@ export default function Home() {
             <Sparkles className="h-8 w-8 text-amber-600 animate-pulse" />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-serif text-amber-900">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-6">
             Anthia & Ornaments
           </h1>
 
-          <p className="text-xl md:text-2xl tracking-widest text-gray-600 mt-1">
-            OCCASIONS MADE BETTER
+          <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light">
+            Celebrating Nigerian elegance through timeless jewelry and fashion
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -79,6 +79,14 @@ export default function Home() {
                 className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow"
               >
                 <div className="aspect-[3/4] bg-gradient-to-br from-amber-100 to-stone-200 relative overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).style.display = 'none';
+                    }}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
                   <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
                     <h3 className="text-2xl font-serif font-bold mb-2">

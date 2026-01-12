@@ -1,50 +1,76 @@
 import { useState } from 'react';
+import { ExternalLink, MessageCircle } from 'lucide-react';
+import ImageModal from '../components/ImageModal';
 
 export default function Jewelry() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    alt: string;
+    title: string;
+  } | null>(null);
 
   const jewelryItems = [
     {
-      name: 'Gold Bracelet Set',
-      category: 'Bracelets',
-      image: '/images/bracelet_3.jpg',
-    },
-    {
-      name: 'Silver Bracelet',
-      category: 'Bracelets',
-      image: '/images/bracelet_4.jpg',
-    },
-    {
-      name: 'Chain Bracelet',
-      category: 'Bracelets',
+      name: 'Chain Collection',
+      category: 'Hand Chains',
+      description: 'Elegant chain bracelets in various styles',
       image: '/images/bracelet_1.jpg',
     },
     {
-      name: 'Knuckle Ring',
+      name: 'Gold Bracelet Set',
+      category: 'Bracelets',
+      description: 'Luxury gold bracelets with premium craftsmanship',
+      image: '/images/bracelet_3.jpg',
+    },
+    {
+      name: 'Silver Bracelet Set',
+      category: 'Bracelets',
+      description: 'Stylish silver bracelets for everyday wear',
+      image: '/images/bracelet_4.jpg',
+    },
+    {
+      name: 'Statement Rings',
       category: 'Rings',
+      description: 'Bold and sophisticated rings design',
+      image: '/images/rings_1.jpg',
+    },
+    {
+      name: 'Knuckle Rings Collection',
+      category: 'Rings',
+      description: 'Trendy knuckle rings for a bold statement',
       image: '/images/knucklerings_1.jpg',
     },
     {
       name: 'Gold Wristwatch',
-      category: 'Watches',
+      category: 'Wristwatches',
+      description: 'Timeless gold wristwatch for every occasion',
       image: '/images/wristwatch_1.jpg',
     },
     {
-      name: 'Gold Watch',
-      category: 'Watches',
+      name: 'Gold Wristwatch',
+      category: 'Wristwatches',
+      description: 'Elegant gold wristwatch with modern design',
       image: '/images/wristwatch_2.jpg',
-    },
-    {
-      name: 'Ring Set',
-      category: 'Sets',
-      image: '/images/rings_1.jpg',
     },
     {
       name: 'Silver Bracelet Collection',
       category: 'Bracelets',
+      description: 'Premium silver bracelets with elegant designs',
       image: '/images/bracelet_2.jpg',
     },
+    {
+      name: 'Necklace Set',
+      category: 'Necklaces',
+      description: 'Beautiful necklace sets for special occasions',
+      image: '/images/necklace_1.jpg',
+    },
   ];
+
+  const handleWhatsAppClick = (itemName: string) => {
+    const message = `Hello! I'm interested in the ${itemName}. Can you provide more details?`;
+    window.open(`https://wa.me/2348124238750?text=${encodeURIComponent(message)}`, '_blank');
+  };
 
   return (
     <div className="min-h-screen pt-20">
@@ -73,7 +99,8 @@ export default function Jewelry() {
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover cursor-pointer hover:brightness-105 transition-all"
+                    onClick={() => setSelectedImage({ src: item.image, alt: item.name, title: item.name })}
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                     }}
@@ -85,15 +112,24 @@ export default function Jewelry() {
                   ></div>
 
                   <div
-                    className={`absolute inset-0 flex items-center justify-center transition-transform duration-300 ${
-                      hoveredIndex === index ? 'scale-110' : 'scale-100'
+                    className={`absolute inset-0 flex items-center justify-center gap-3 transition-transform duration-300 ${
+                      hoveredIndex === index ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
                     }`}
                   >
-                    <div className="text-center p-8 pointer-events-none">
-                      <p className="text-sm text-gray-600 font-medium">
-                        {item.name}
-                      </p>
-                    </div>
+                    <button
+                      onClick={() => setSelectedImage({ src: item.image, alt: item.name, title: item.name })}
+                      className="flex items-center justify-center gap-2 px-4 py-2 bg-white/90 hover:bg-white text-gray-900 rounded-lg transition-all font-medium"
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      View
+                    </button>
+                    <button
+                      onClick={() => handleWhatsAppClick(item.name)}
+                      className="flex items-center justify-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-all font-medium"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                      Inquire
+                    </button>
                   </div>
                 </div>
 
@@ -101,9 +137,12 @@ export default function Jewelry() {
                   <p className="text-xs text-amber-600 font-medium uppercase tracking-wide mb-1">
                     {item.category}
                   </p>
-                  <h3 className="text-lg font-serif font-semibold text-gray-900">
+                  <h3 className="text-lg font-serif font-semibold text-gray-900 mb-2">
                     {item.name}
                   </h3>
+                  <p className="text-sm text-gray-600">
+                    {item.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -132,6 +171,14 @@ export default function Jewelry() {
           </a>
         </div>
       </section>
+
+      <ImageModal
+        isOpen={selectedImage !== null}
+        imageSrc={selectedImage?.src || ''}
+        imageAlt={selectedImage?.alt || ''}
+        imageTitle={selectedImage?.title || ''}
+        onClose={() => setSelectedImage(null)}
+      />
     </div>
   );
 }
