@@ -12,33 +12,33 @@ export default function Eyeglasses() {
 
   const eyeglassItems = [
     {
-      name: 'Premium Black Frame Sunglasses',
-      description: 'Sleek black frames with UV protection for a contemporary look',
-      image: '/images/eyeglass_1.png',
+      name: 'Designer Prada Eyeglasses',
+      description: 'Stylish frames with premium lenses for clear vision under the sun',
+      image: '/images/prada.png',
       price: '',
     },
     {
-      name: 'Luxury Gold-Rimmed Sunglasses',
-      description: 'Elegant gold accents with gradient lenses for sophisticated style',
-      image: '/images/eyeglass_2.png',
+      name: 'Cartier Gradient Lens Eyeglasses',
+      description: 'Luxury frames with gradient lenses for a sophisticated look',
+      image: '/images/cartier.png',
       price: '',
     },
     {
-        name: 'Classic Round Frame Eyeglasses',
-        description: 'Timeless round frames for a classic look',
-        image: '/images/eyeglass_3.png',
+        name: 'Vintage Round Frame Eyeglasses',
+        description: 'Timeless round frames for a vintage-inspired style',
+        image: '/images/prada_2.png',
         price: '',
     },
     {
-        name: 'Modern Square Frame Eyeglasses',
-        description: 'Contemporary square frames for a bold statement',
-        image: '/images/eyeglass_4.png',
+        name: 'Chic Square Frame Eyeglasses',
+        description: 'Chic square frames for a contemporary appearance',
+        image: '/images/prada_3.png',
         price: '',
     },
     {
-        name: 'Stylish Transparent Frame Eyeglasses',
-        description: 'Classic transparent frames for versatile wear',
-        image: '/images/eyeglass_5.png',
+        name: 'Transparent Frame Eyeglasses',
+        description: 'Transparent frames for a modern and versatile look',
+        image: '/images/prada_4.png',
         price: '',
     },
   ];

@@ -6,9 +6,9 @@ export default function Gallery() {
 
   const galleryImages = [
     {
-      url: '/images/bracelet_2.jpg',
-      title: 'Silver Bracelet Collection',
-      description: 'Elegant silver bracelets with premium craftsmanship',
+      url: '/images/Tomi_1.jpg',
+      title: 'Luxury Packaged Wristwatch',
+      description: 'Elegant wristwatch in premium packaging',
     },
     {
       url: '/images/bracelet_1.jpg',
@@ -26,9 +26,9 @@ export default function Gallery() {
       description: 'Modern elegance in silver',
     },
     {
-      url: '/images/knucklerings_1.jpg',
-      title: 'Knuckle Rings Collection',
-      description: 'Trendy knuckle rings for a bold statement',
+      url: '/images/Organza_3.jpg',
+      title: 'Organza Dress Collection',
+      description: 'Flowy and elegant organza dresses for special occasions',
     },
     {
       url: '/images/wristwatch_1.jpg',
@@ -37,11 +37,11 @@ export default function Gallery() {
     },
     {
       url: '/images/clothing_1.jpg',
-      title: 'Ankara Maxi Dress',
-      description: 'Vibrant ankara fabric with elegant design',
+      title: 'The Blue Regal Poise Gown ✨',
+      description: 'Elegant gown perfect for special occasions',
     },
     {
-      url: '/images/eyeglass_1.png',
+      url: '/images/prada.png',
       title: 'Premium Black Frame Sunglasses',
       description: 'Sleek black frames with UV protection',
     },

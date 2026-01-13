@@ -15,9 +15,9 @@ export default function Jewelry() {
       name: 'Pearl Blossom Set',
       category: 'Necklaces',
       description: `Delicate florals, kissed with subtle shimmer.
-Light, graceful, and quietly feminine.
-The kind of piece that feels like summer on the skin.
-Earrings and necklace.`,
+      Light, graceful, and quietly feminine.
+      The kind of piece that feels like summer on the skin.
+      Earrings and necklace.`,
       image: '/images/pearl necklace_8.jpg',
       price: '₦28,000',
     },
@@ -25,7 +25,7 @@ Earrings and necklace.`,
       name: 'Necklace Set',
       category: 'Necklaces',
       description: `Delicate gold-tone necklaces, each designed to sit softly and speak quietly.
-Timeless symbols, refined finishes, and effortless layering perfect for everyday elegance or subtle statements.`,
+      Timeless symbols, refined finishes, and effortless layering perfect for everyday elegance or subtle statements.`,
       image: '/images/necklace_set.png',
       price: '₦15,000 each',
     },
@@ -33,83 +33,28 @@ Timeless symbols, refined finishes, and effortless layering perfect for everyday
       name: 'Rose Necklace Set',
       category: 'Necklaces',
       description: `Delicate floral earrings and necklace set.
-Light, graceful, and softly radiant designed to complement effortlessly and elevate every look.
+      Light, graceful, and softly radiant designed to complement effortlessly and elevate every look.
 
-Available in different colors.`,
+      Available in different colors.`,
       image: '/images/rose necklace_14.jpg',
       price: '₦18,000',
-    },
-    {
-      name: 'Black Diamond Necklace',
-      category: 'Necklaces',
-      description: 'Stunning black diamond necklace for a bold look',
-      image: '/images/necklace_5.jpg',
-      price: 'Inquire for price',
-    },
-    {
-      name: 'Statement Rings',
-      category: 'Rings',
-      description: 'Bold and sophisticated rings design',
-      image: '/images/rings_1.jpg',
-    },
-    {
-      name: 'Knuckle Rings Collection',
-      category: 'Rings',
-      description: 'Trendy knuckle rings for a bold statement',
-      image: '/images/knucklerings_1.jpg',
-    },
-    {
-      name: 'Silver Bracelet Collection',
-      category: 'Bracelets',
-      description: 'Premium silver bracelets with elegant designs',
-      image: '/images/bracelet_2.jpg',
-    },
-    {
-      name: 'Necklace Set',
-      category: 'Necklaces',
-      description: 'Beautiful necklace sets for special occasions',
-      image: '/images/necklace_1.jpg',
-    },
-    {
-      name: 'Cherry Blossom Necklace Set',
-      category: 'Necklaces',
-      description: 'Delicate cherry blossom inspired necklace design',
-      image: '/images/necklace_2.png',
     },
     {
       name: 'The Cherry Bloom Necklace',
       category: 'Necklaces',
       description: `Soft. Playful. Feminine. Memorable.
 
-Sweet, but not childish 🍒
-Because soft girls still like to be noticed.`,
+      Sweet, but not childish 🍒
+      Because soft girls still like to be noticed.`,
       image: '/images/necklace_3.png',
       price: '₦6,500',
-    },
-    {
-      name: 'Elegant Necklace Set',
-      category: 'Necklaces',
-      description: 'Sophisticated necklace design for all occasions',
-      image: '/images/necklace_4.png',
-    },
-    {
-      name: 'Black Diamond Necklace',
-      category: 'Necklaces',
-      description: 'Stunning black diamond necklace for a bold look',
-      image: '/images/necklace_5.jpg',
-    },
-    {
-      name: 'Rainbow Necklace',
-      category: 'Necklaces',
-      description: 'Vibrant rainbow necklace for a colorful statement',
-      image: '/images/necklace_6.jpg',
     },
     {
       name: 'Gold Lock Necklace',
       category: 'Necklaces',
       description: `Layered gold-tone chains designed to rest softly and speak with quiet confidence.
-Refined, balanced, and effortless.
-The kind of piece that completes a calm, clean presence.`,
+      Refined, balanced, and effortless.
+      The kind of piece that completes a calm, clean presence.`,
       image: '/images/gold lock necklace_1.jpg',
       price: '₦22,000',
     }
