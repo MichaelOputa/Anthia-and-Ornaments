@@ -48,19 +48,13 @@ export default function About() {
               </h2>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  Anthia & Ornaments was born from a passion for celebrating the rich heritage
-                  and beauty of Nigerian craftsmanship. We believe that jewelry and fashion are
-                  more than just accessories – they are expressions of identity, culture, and elegance.
+                  Anthia & Ornaments is a unisex online store offering thoughtfully curated jewelry, wristwatches, eyewear, and clothing.
+                  Our pieces are selected with balance, individuality, and presence in mind that’s created to complement different styles without limitation.
                 </p>
                 <p>
-                  Each piece in our collection is thoughtfully curated to reflect the finest in
-                  Nigerian artistry. From traditional beadwork to contemporary designs, we bring
-                  together the best of both worlds to create pieces that are both timeless and modern.
-                </p>
-                <p>
-                  Our commitment to quality and authenticity sets us apart. We work directly with
-                  skilled artisans across Nigeria, ensuring that every item meets our high standards
-                  of craftsmanship and beauty.
+                  This is luxury without noise. 
+                  Style without pressure. 
+                  Pieces that move with you.
                 </p>
               </div>
             </div>

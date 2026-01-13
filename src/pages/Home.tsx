@@ -38,7 +38,12 @@ export default function Home() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light">
-            Celebrating Nigerian elegance through timeless jewelry and fashion
+            Jewelry • Wristwatches • Eyewear • Clothing
+          </p>
+
+          <p className="text-lg text-gray-600 mb-12">
+            A unisex online store curating intentional pieces designed for everyday elegance and meaningful moments.
+            ...occasions made better
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

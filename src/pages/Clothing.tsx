@@ -12,52 +12,83 @@ export default function Clothing() {
 
   const clothingItems = [
     {
-      name: 'Ankara Maxi Dress',
-      category: 'Dresses',
-      description: 'Vibrant ankara fabric with elegant design',
-      image: '/images/clothing_1.jpg',
-    },
-    {
-      name: 'Elegant Jumpsuit',
-      category: 'Jumpsuits',
-      description: 'Sophisticated jumpsuit for any occasion',
-      image: '/images/clothing/jumpsuit-1.jpg',
-    },
-    {
-      name: 'Traditional Gele Set',
-      category: 'Accessories',
-      description: 'Authentic traditional head wrap styling',
-      image: '/images/clothing/gele-1.jpg',
-    },
-    {
-      name: 'Evening Gown',
+      name: 'The Green Regal Poise Gown ✨',
       category: 'Gowns',
-      description: 'Elegant evening wear with premium fabrics',
-      image: '/images/clothing/gown-1.jpg',
+      description: `Statement kaftan-style gown made from brocade fabric 
+perfect for cultural gatherings, elegant outings, and everyday luxury.
+This isn’t just fashion.
+It’s heritage in motion. 💛`,
+      image: '/images/clothing_3.png',
+      price: '₦25,000',
     },
     {
-      name: 'Two-Piece Set',
-      category: 'Sets',
-      description: 'Coordinated top and bottom combination',
-      image: '/images/clothing/set-1.jpg',
+      name: 'The Orange Regal Poise Gown ✨',
+      category: 'Gowns',
+      description: `Statement kaftan-style gown made from brocade fabric 
+perfect for cultural gatherings, elegant outings, and everyday luxury.
+This isn’t just fashion.
+It’s heritage in motion. 💛`,
+      image: '/images/clothing_6.png',
+      price: '₦25,000',
     },
     {
-      name: 'Lace Blouse',
-      category: 'Tops',
-      description: 'Delicate lace with intricate details',
-      image: '/images/clothing/blouse-1.jpg',
-    },
-    {
-      name: 'Aso Ebi Ensemble',
+      name: 'The Classic Ivory Boubou 🤍',
       category: 'Traditional',
-      description: 'Complete traditional outfit set',
-      image: '/images/clothing/asoebi-1.jpg',
+      description: `Soft luxury flowing, free-size boubou designed for effortless elegance, featuring subtle front buttons and adjustable inner fitting for a perfect, graceful drape.
+Available in multiple colours.
+Perfect for outings, errands, events, or days you want for effortless class.`,
+      image: '/images/clothing_7.png',
+      price: '₦16,000',
     },
     {
-      name: 'Kaftan Dress',
-      category: 'Dresses',
-      description: 'Comfortable and stylish kaftan design',
-      image: '/images/clothing/kaftan-1.jpg',
+      name: 'The Royal Violet Poise Gown ✨',
+      category: 'Gowns',
+      description: `Statement kaftan-style gown made from brocade fabric 
+      perfect for cultural gatherings, elegant outings, and everyday luxury.
+      This isn’t just fashion.
+      It’s heritage in motion. 💛`,
+      image: '/images/clothing_8.png',
+      price: '₦25,000',
+    },
+    {
+       name: 'The Aurelia Heritage Boubou ✨',
+      category: 'Boubou',
+      description: 'Royal mustard gold with intricate woven embroidery along a deep V-neckline.\nA flowing, full-length silhouette designed for ease, grace, and undeniable presence.💛',
+      image: '/images/clothing_9.png',
+      price: '₦25,000',
+    },
+    {
+      name: 'Aurelia Flow 🤍',
+      category: 'V-Neck Dress',
+      description: `Soft V-neckline (front & back)
+      Adjustable tie sleeves
+      Flattering cinched waist
+      Where strength meets softness.
+      Designed to move with you, not against you. ✨💙`,
+      image: '/images/clothing_10.png',
+      price: '₦16,000',
+    },
+    {
+      name: 'The Rosé Whisper Boubou 🎀',
+      category: 'Boubou',
+      description: `A flowing, free-fit silhouette with a soft V-neck and delicate ribbon details.
+      For the woman who leads with softness and shows up with presence.`,
+      image: '/images/clothing_11.png',
+      price: '₦16,000',
+    },
+    {
+      name: 'The Blue Regal Poise Gown ✨',
+      category: 'Gowns',
+      description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn’t just fashion.\nIt’s heritage in motion. 💛`,
+      image: '/images/clothing_12.png',
+      price: '₦25,000',
+    },
+    {
+      name: 'The Red Regal Poise Gown ✨',
+      category: 'Gowns',
+      description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn’t just fashion.\nIt’s heritage in motion. 💛`,
+      image: '/images/clothing_13.png',
+      price: '₦25,000',
     },
   ];
 
@@ -136,6 +167,9 @@ export default function Clothing() {
                   </h3>
                   <p className="text-sm text-gray-600">
                     {item.description}
+                  </p>
+                   <p className="text-lg font-semibold text-amber-600">
+                    {item.price}
                   </p>
                 </div>
               </div>
