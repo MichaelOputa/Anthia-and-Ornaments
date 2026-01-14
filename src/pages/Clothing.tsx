@@ -90,6 +90,106 @@ Perfect for outings, errands, events, or days you want for effortless class.`,
       image: '/images/clothing_13.png',
       price: '₦25,000',
     },
+    {
+      name: 'UNDISPUTED LUXURY SHORTS ✨',
+      category: 'Shorts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shorts.jpg',
+      price: '₦25,000',
+    },
+      {
+      name: 'UNDISPUTED LUXURY SHORTS ✨',
+      category: 'Shorts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shorts_2.jpg',
+      price: '₦20,000',
+    },
+    {
+      name: 'UNDISPUTED LUXURY SHORTS ✨',
+      category: 'Shorts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shorts_3.jpg',
+      price: '₦20,000',
+    },
+    {
+      name: 'UNDISPUTED LUXURY SHORTS ✨',
+      category: 'Shorts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shorts_4.jpg',
+      price: '₦20,000',
+    },
+    {
+      name: 'UNDISPUTED LUXURY SHORTS ✨',
+      category: 'Shorts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shorts_5.jpg',
+      price: '₦20,000',
+    },
+    {
+      name: 'UNDISPUTED LUXURY SHORTS ✨',
+      category: 'Shorts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shorts_6.jpg',
+      price: '₦20,000',
+    },
+    {
+      name: 'UNDISPUTED LUXURY SHORTS ✨',
+      category: 'Shorts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shorts_7.jpg',
+      price: '₦20,000',
+    },
+    {
+      name: 'UNDISPUTED LUXURY SHORTS ✨',
+      category: 'Shorts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shorts_8.jpg',
+      price: '₦20,000',
+    },
+    {
+      name: 'UNDISPUTED LUXURY SHIRT ✨',
+      category: 'Shirts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shirt_1.jpg',
+      price: '₦22,000',
+    },
+    {
+      name: 'UNDISPUTED LUXURY SHIRT ✨',
+      category: 'Shirts',
+      description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+      image: '/images/shirt_2.jpg',
+      price: '₦22,000',
+    },
   ];
 
   const handleWhatsAppClick = (itemName: string) => {

@@ -57,7 +57,49 @@ export default function Jewelry() {
       The kind of piece that completes a calm, clean presence.`,
       image: '/images/gold lock necklace_1.jpg',
       price: '₦22,000',
-    }
+    },
+    {
+      name: 'Bare Intent Waist Chain',
+      category: 'Waist Chains',
+      description: `A quiet detail that transforms the simplest look into something intentional.`,
+      image: '/images/chain_1.jpg',
+      price: '₦15,000',
+    },
+    {
+      name: 'Bare Intent Waist Chain',
+      category: 'Waist Chains',
+      description: `A quiet detail that transforms the simplest look into something intentional.`,
+      image: '/images/chain_2.jpg',
+      price: '₦15,000',
+    },
+    {
+      name: 'Bare Intent Waist Chain',
+      category: 'Waist Chains',
+      description: `A quiet detail that transforms the simplest look into something intentional.`,
+      image: '/images/chain_3.jpg',
+      price: '₦15,000',
+    },
+    {
+      name: 'Bare Intent Waist Chain',
+      category: 'Waist Chains',
+      description: `A quiet detail that transforms the simplest look into something intentional.`,
+      image: '/images/chain_4.jpg',
+      price: '₦15,000',
+    },
+    {
+      name: 'Bare Intent Waist Chain',
+      category: 'Waist Chains',
+      description: `A quiet detail that transforms the simplest look into something intentional.`,
+      image: '/images/chain_5.jpg',
+      price: '₦15,000',
+    },
+    {
+      name: 'Bare Intent Waist Chain',
+      category: 'Waist Chains',
+      description: `A quiet detail that transforms the simplest look into something intentional.`,
+      image: '/images/chain_6.jpg',
+      price: '₦15,000',
+    },
   ];
 
   const handleWhatsAppClick = (itemName: string) => {
