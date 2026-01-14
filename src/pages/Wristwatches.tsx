@@ -361,10 +361,10 @@ Crafted for those who appreciate timeless style and elevated performance.`,
       <section className="py-16 px-4 bg-gradient-to-br from-amber-50 to-stone-50">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
-            Jewelry Collection
+            Wristwatch Collection
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our exquisite range of handcrafted jewelry, each piece designed to add elegance and sparkle to your style.
+            Discover our exquisite wristwatch, each piece designed to add elegance and sparkle to your style.
           </p>
         </div>
       </section>
