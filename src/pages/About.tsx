@@ -1,6 +1,13 @@
 import { Heart, Sparkles, Award, Users } from 'lucide-react';
+import { useState } from 'react';
+import ImageModal from '../components/ImageModal';
 
 export default function About() {
+  const [selectedImage, setSelectedImage] = useState<{
+    src: string;
+    alt: string;
+    title: string;
+  } | null>(null);
   const values = [
     {
       icon: Heart,
@@ -40,7 +47,25 @@ export default function About() {
       <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
-            <div className="aspect-[4/3] bg-gradient-to-br from-amber-100 to-stone-200 rounded-2xl shadow-lg"></div>
+            <div
+              className="aspect-[4/3] bg-gradient-to-br from-amber-100 to-stone-200 rounded-2xl shadow-lg overflow-hidden cursor-pointer group"
+              onClick={() =>
+                setSelectedImage({
+                  src: '/images/anthia_and_ornaments.jpg',
+                  alt: 'Anthia and Ornaments',
+                  title: 'Founder - Anthia & Ornaments',
+                })
+              }
+            >
+              <img
+                src="/images/anthia_and_ornaments.jpg"
+                alt="Anthia and Ornaments"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = 'none';
+                }}
+              />
+            </div>
 
             <div>
               <h2 className="text-4xl font-serif font-bold text-gray-900 mb-6">
@@ -106,6 +131,14 @@ export default function About() {
           </div>
         </div>
       </section>
+
+      <ImageModal
+        isOpen={selectedImage !== null}
+        imageSrc={selectedImage?.src || ''}
+        imageAlt={selectedImage?.alt || ''}
+        imageTitle={selectedImage?.title || ''}
+        onClose={() => setSelectedImage(null)}
+      />
     </div>
   );
 }

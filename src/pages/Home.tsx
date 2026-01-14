@@ -12,7 +12,7 @@ export default function Home() {
     {
       title: 'Designer Eyeglasses',
       description: 'Premium frames for every style',
-      image: '/images/eyeglass_1.png',
+      image: '/images/prada.png',
       link: '/eyeglasses',
     },
     {

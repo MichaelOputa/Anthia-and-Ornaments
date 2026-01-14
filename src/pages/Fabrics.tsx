@@ -44,6 +44,14 @@ Lightweight, elegant, and perfect for standout, refined looks.`,
         price: '₦70,000 for 5 yards',
     },
     {
+      name: 'Tissue Cord with Sergio & Jacob Gele',
+      category: 'Tissue Cord',
+      description: `5 yards of Tissue Cord with Sergio & Jacob Gele
+      Gele (Head & Shoulder)`,
+      image: '/images/Chiffon Lace_9.jpg',
+      price: '₦130,000',
+    },
+    {
      name: 'Premium Swiss Chiffon Lace',
       category: 'Lace',
       description: `Featuring a new embroidered design, delicately finished with Swarovski stones 💎

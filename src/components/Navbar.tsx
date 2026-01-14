@@ -12,6 +12,7 @@ export default function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'Jewelry', path: '/jewelry' },
     { name: 'Clothing', path: '/clothing' },
+    {name: 'Slides', path: '/slides' },
     { name: 'Fabrics', path: '/fabrics' },
     {name: 'Wristwatches', path: '/wristwatches' },
     { name: 'Eyeglasses', path: '/eyeglasses' },
