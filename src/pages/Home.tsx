@@ -38,7 +38,7 @@ export default function Home() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light">
-            Jewelry • Wristwatches • Eyewear • Clothing
+            Jewelry • Wristwatches • Eyewear • Clothing • Fabrics • Slides
           </p>
 
           <p className="text-lg text-gray-600 mb-12">
