@@ -6,13 +6,13 @@ export default function Home() {
     {
       title: 'Exquisite Jewelry',
       description: 'Handcrafted pieces that tell your story',
-      image: '/images/bracelet_2.jpg',
+      image: '/images/necklace_set.png',
       link: '/jewelry',
     },
     {
       title: 'Designer Eyeglasses',
       description: 'Premium frames for every style',
-      image: '/images/prada.png',
+      image: '/images/prada_2.png',
       link: '/eyeglasses',
     },
     {
@@ -20,6 +20,12 @@ export default function Home() {
       description: 'Premium clothing for the modern woman',
       image: '/images/clothing_1.jpg',
       link: '/clothing',
+    },
+    {
+      title: 'Beautiful Fabrics',
+      description: 'Luxurious textiles for every occasion',
+      image: '/images/Chiffon Lace_9.jpg',
+      link: '/fabrics',
     },
   ];
 
