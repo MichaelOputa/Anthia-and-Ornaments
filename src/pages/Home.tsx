@@ -27,6 +27,24 @@ export default function Home() {
       image: '/images/Chiffon Lace_9.jpg',
       link: '/fabrics',
     },
+    {
+      title: 'Luxury Wristwatches',
+      description: 'Timeless designs to elevate your look',
+      image: '/images/chanel_3.jpg',
+      link: '/wristwatches',
+    },
+    {
+      title: 'Stylish Slides',
+      description: 'Comfort meets fashion in our slide collection',
+      image: '/images/slide_9.jpg',
+      link: '/slides',
+    },
+    {
+      title: 'Chic Caps',
+      description: 'Trendy caps to complete your outfit',
+      image: '/images/cap_7.jpeg',
+      link: '/caps',
+    },
   ];
 
   return (

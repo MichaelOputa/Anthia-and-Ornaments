@@ -91,14 +91,12 @@ Perfect for outings, errands, events, or days you want for effortless class.`,
       price: '₦25,000',
     },
     {
-      name: 'UNDISPUTED LUXURY SHORTS ✨',
+      name: 'The Midnight Stud Denim Shorts ✨',
       category: 'Shorts',
-      description: `UNDISPUTED LUXURY 📟📟
-      BEST QUALITY 💯💯
-      TOP NOTCH 🏞
-      Available in different sizes`,
+      description: `A deep black wash with subtle stud detailing that catches light without screaming for attention. 
+Relaxed fit, structured feel designed for comfort, styled for presence.`,
       image: '/images/shorts.jpg',
-      price: '₦25,000',
+      price: '₦20,000',
     },
       {
       name: 'UNDISPUTED LUXURY SHORTS ✨',
@@ -171,24 +169,25 @@ Perfect for outings, errands, events, or days you want for effortless class.`,
       price: '₦20,000',
     },
     {
-      name: 'UNDISPUTED LUXURY SHIRT ✨',
+      name: 'The AXEPEAK 07 Polo Jersey ✨',
       category: 'Shirts',
-      description: `UNDISPUTED LUXURY 📟📟
-      BEST QUALITY 💯💯
-      TOP NOTCH 🏞
-      Available in different sizes`,
+      description: `Athletic codes with street confidence relaxed fit, bold graphics, and a structure that sits right without trying too hard.`,
       image: '/images/shirt_1.jpg',
-      price: '₦22,000',
+      price: '₦25,000',
     },
     {
-      name: 'UNDISPUTED LUXURY SHIRT ✨',
+      name: 'The AXEPEAK 07 Polo Jersey ✨',
       category: 'Shirts',
-      description: `UNDISPUTED LUXURY 📟📟
-      BEST QUALITY 💯💯
-      TOP NOTCH 🏞
-      Available in different sizes`,
+      description: `Athletic codes with street confidence relaxed fit, bold graphics, and a structure that sits right without trying too hard.`,
       image: '/images/shirt_2.jpg',
-      price: '₦22,000',
+      price: '₦25,000',
+    },
+    {
+      name: 'The Riviera Crest Tee ✨',
+      category: 'Shirts',
+      description: `Classic European insignia with modern street ease. Relaxed fit, bold black base, and crisp white detailing that feels intentional, not loud.`,
+      image: '/images/shirt_3.JPG',
+      price: '₦25,000',
     },
   ];
 
