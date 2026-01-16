@@ -85,6 +85,27 @@ export default function Home() {
               Shop Clothing
               <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
+            <Link
+              to="/eyeglasses"
+              className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl font-medium"
+            >
+              Shop Eyeglasses
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </Link>
+            <Link
+              to="/wristwatches"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-900 rounded-lg transition-colors font-medium"
+            >
+              Shop Wristwatches
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </Link>
+            <Link
+              to="/fabrics"
+              className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl font-medium"
+            >
+              Shop Fabrics
+              <ChevronRight className="ml-2 h-5 w-5" />
+            </Link>
           </div>
         </div>
       </section>
