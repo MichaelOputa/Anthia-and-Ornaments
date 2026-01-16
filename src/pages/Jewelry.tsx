@@ -59,9 +59,159 @@ export default function Jewelry() {
       price: '₦22,000',
     },
     {
+      name: 'The Faith & Form Cross Chain',
+      category: 'Necklaces',
+      description: `Not loud.
+Not forced.
+Just meaning… and clean style.`,
+      image: '/images/necklace_1.jpg',
+      price: '₦10,000',
+    },
+    {
+      name: 'The Quiet Power Chain',
+      category: 'Bracelets',
+      description: `Strong, subtle, very you.`,
+      image: '/images/bracelet_5.jpg',
+      price: '₦8,500',
+    },
+    {
+      name: 'The Quiet Power Chain (Silver)',
+      category: 'Bracelets',
+      description: `Strong, subtle, very you.`,
+      image: '/images/bracelet_16.JPG',
+      price: '₦8,500',
+    },
+    {
+      name: '🖤 The Silver Bar Duo (Cuff + Necklace combo)',
+      category: 'Bracelet & Necklace Sets',
+      description: `For the one who likes their jewelry clean and intentional.`,
+      image: '/images/bracelet & necklace_1.jpg',
+      price: '₦22,500',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_4.jpg',
+      price: '₦15,000',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_7.jpg',
+      price: '₦15,000',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_8.jpeg',
+      price: '₦15,000',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_9.jpeg',
+      price: '₦15,000',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_10.jpeg',
+      price: '₦15,000',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_11.jpeg',
+      price: '₦15,000',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_12.jpeg',
+      price: '₦15,000',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_13.jpeg',
+      price: '₦15,000',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_14.jpeg',
+      price: '₦15,000',
+    },
+    {
+      name: 'The Executive Chain Bracelets Collection',
+      category: 'Bracelets',
+      description: `These are statement chain bracelets designed for men who move with confidence and quiet authority.
+	•	Material: High-quality stainless steel
+	•	Finish: Polished silver-tone shine
+	•	Design: Thick interlocked chain with engraved statement plates
+	•	Fit: Adjustable clasp for comfort and ease
+	•	Durability: Tarnish-resistant & long-lasting`,
+      image: '/images/bracelet_15.jpeg',
+      price: '₦15,000',
+    },
+    {
       name: 'Bare Intent Waist Chain',
       category: 'Waist Chains',
-      description: `A quiet detail that transforms the simplest look into something intentional.`,
+      description: `A quiet detail that transforms the simplest look into something intentional`,
       image: '/images/chain_1.jpg',
       price: '₦15,000',
     },
