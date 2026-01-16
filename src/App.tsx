@@ -4,7 +4,9 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import Home from './pages/Home';
 import Jewelry from './pages/Jewelry';
+import Perfumes from './pages/Perfumes';
 import Clothing from './pages/Clothing';
+import MensWear from './pages/MensWear';
 import Caps from './pages/Caps';
 import Slides from './pages/Slides';
 import Fabrics from './pages/Fabrics';
@@ -22,7 +24,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/jewelry" element={<Jewelry />} />
+          <Route path="/perfumes" element={<Perfumes />} />
           <Route path="/clothing" element={<Clothing />} />
+          <Route path="/mens-wear" element={<MensWear />} />
           <Route path="/caps" element={<Caps />} />
           <Route path="/slides" element={<Slides />} />
           <Route path="/fabrics" element={<Fabrics />} />

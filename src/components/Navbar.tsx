@@ -11,7 +11,9 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Jewelry', path: '/jewelry' },
+    { name: 'Perfumes', path: '/perfumes' },
     { name: 'Clothing', path: '/clothing' },
+    {name: 'Mens Wear', path: '/mens-wear' },
     { name: 'Caps', path: '/caps' },
     {name: 'Slides', path: '/slides' },
     { name: 'Fabrics', path: '/fabrics' },

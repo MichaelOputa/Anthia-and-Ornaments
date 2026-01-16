@@ -259,6 +259,46 @@ Rich in texture, refined in finish crafted for standout pieces and timeless eleg
         image: '/images/Swiss Chiffon_6.jpg',
         price: '₦100,000 for 5 yards',
     },
+    {
+      name: 'SWISS voile lace WITH embroidery LACE',
+      category: 'Lace',
+      description: `NEW DESIGN
+WITH SWAROVSKI GoldSTONES`,
+      image: '/images/Swiss Chiffon_7.JPG',
+      price: '₦60,000 for 5 yards',
+    },
+    {
+      name: 'SWISS voile lace WITH embroidery LACE',
+      category: 'Lace',
+      description: `NEW DESIGN
+WITH SWAROVSKI GoldSTONES`,
+      image: '/images/Swiss Chiffon_8.JPG',
+      price: '₦60,000 for 5 yards',
+    },
+    {
+      name: 'SWISS voile lace WITH embroidery LACE',
+      category: 'Lace',
+      description: `NEW DESIGN
+WITH SWAROVSKI GoldSTONES`,
+      image: '/images/Swiss Chiffon_9.JPG',
+      price: '₦60,000 for 5 yards',
+    },
+    {
+      name: 'SWISS voile lace WITH embroidery LACE',
+      category: 'Lace',
+      description: `NEW DESIGN
+WITH SWAROVSKI GoldSTONES`,
+      image: '/images/Swiss Chiffon_10.JPG',
+      price: '₦60,000 for 5 yards',
+    },
+    {
+      name: 'SWISS voile lace WITH embroidery LACE',
+      category: 'Lace',
+      description: `NEW DESIGN
+WITH SWAROVSKI GoldSTONES`,
+      image: '/images/Swiss Chiffon_11.JPG',
+      price: '₦60,000 for 5 yards',
+    },
   ];
 
   const handleWhatsAppClick = (itemName: string) => {

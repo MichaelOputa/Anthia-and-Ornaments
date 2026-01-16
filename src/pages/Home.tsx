@@ -4,6 +4,12 @@ import { ChevronRight, Sparkles } from 'lucide-react';
 export default function Home() {
   const featuredItems = [
     {
+      title: 'New Arrival',
+      description: 'Our business is growing and we now we are introducing Perfumes, best fragrance for you and everyday elegance',
+      image: '/images/perfume_1.JPG',
+      link: '/perfumes',
+    },
+    {
       title: 'Exquisite Jewelry',
       description: 'Handcrafted pieces that tell your story',
       image: '/images/necklace_set.png',
