@@ -51,14 +51,14 @@ export default function About() {
               className="aspect-[4/3] bg-gradient-to-br from-amber-100 to-stone-200 rounded-2xl shadow-lg overflow-hidden cursor-pointer group"
               onClick={() =>
                 setSelectedImage({
-                  src: '/images/anthia_and_ornaments.jpg',
+                  src: '/images/anthia_and_ornaments.PNG',
                   alt: 'Anthia and Ornaments',
                   title: 'Founder - Anthia & Ornaments',
                 })
               }
             >
               <img
-                src="/images/anthia_and_ornaments.jpg"
+                src="/images/anthia_and_ornaments.PNG"
                 alt="Anthia and Ornaments"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 onError={(e) => {
