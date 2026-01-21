@@ -12,7 +12,7 @@ export default function Perfumes() {
 
   const perfumesItems = [
     {
-      name: 'Pandora Swiss Oud',
+      name: 'Pana Dora Swiss Oud',
       description: `Experience the allure of our designer perfumes, crafted to captivate your senses and leave a lasting impression.`,
       image: '/images/pandora.jpeg',
       price: '₦125,000',
