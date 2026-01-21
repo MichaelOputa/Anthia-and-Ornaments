@@ -12,6 +12,24 @@ export default function Perfumes() {
 
   const perfumesItems = [
     {
+      name: 'Pandora Swiss Oud',
+      description: `Experience the allure of our designer perfumes, crafted to captivate your senses and leave a lasting impression.`,
+      image: '/images/pandora.jpeg',
+      price: '₦125,000',
+    },
+    {
+      name: 'Qaed Al Fursan',
+      description: `Experience the allure of our designer perfumes, crafted to captivate your senses and leave a lasting impression.`,
+      image: '/images/perfume_12.jpeg',
+      price: '₦40,000',
+    },
+    {
+      name: 'Emporio Armani Stronger With You Intensely & Lattafa Pride Vintage Radio',
+      description: `Experience the allure of our designer perfumes, crafted to captivate your senses and leave a lasting impression.`,
+      image: '/images/perfume_13.jpeg',
+      price: '₦140,000',
+    },
+    {
       name: 'Club de Nuit Int',
       description: `Experience the allure of our designer perfumes, crafted to captivate your senses and leave a lasting impression.`,
       image: '/images/perfume_1.JPG',
