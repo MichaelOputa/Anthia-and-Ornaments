@@ -271,6 +271,13 @@ Relaxed fit, structured feel designed for comfort, styled for presence.`,
       image: '/images/retro_6.JPG',
       price: '₦23,000',
     },
+    {
+      name: 'IRON MAIDEN SPECIAL EDITION VINTAGE KIT',
+      category: 'Jersey',
+      description: `Limited edition Iron Maiden vintage football kit. A unique blend of music and sport for true fans.`,
+      image: '/images/jersey.jpeg',
+      price: '₦22,000',
+    },
   ];
 
   const handleWhatsAppClick = (itemName: string) => {
