@@ -252,6 +252,24 @@ Fully boxed and available in different colors, these Hublot watches are made for
         price: '₦40,000',
     },
     {
+      name: 'Anthiaornaments | POEDAGAR',
+      category: 'Wristwatches',
+      description: `Built for structure. 
+Designed for everyday precision.
+
+Poedagar features a chronograph-style dial,layered with sub-dials that add depth, balance, and a sporty edge.
+Finished with a smooth leather strap
+that sits comfortably on the wrist and elevates the overall look.
+The leather adds warmth, flexibility, and ease,making it suitable for daily wear without losing its sharp appeal.
+This is not about excess.
+It’s about function, form, and confidence.
+Chronograph-inspired.
+Leather-finished.
+Refined, without trying too hard.`,
+      image: '/images/poedagar_9.jpeg',
+      price: '₦35,000',
+    },
+    {
         name: 'The Tomi Signature Gentleman Set',
         category: 'Wristwatches',
         description: `For the man who likes his style clean, intentional, and timeless.
@@ -348,6 +366,20 @@ Crafted for those who appreciate timeless style and elevated performance.`,
 Crafted for those who appreciate timeless style and elevated performance.`,
         image: 'images/Vacheron_10.jpg',
         price: '₦125,000',
+    },
+    {
+      name: '✨THE ROLEX EDIT✨',
+      category: 'Wristwatches',
+      description: `For legacy. For presence. For quiet authority.
+This isn’t about telling time.
+It’s about what time has already told about you.
+Crafted with iconic detailing,
+finished in timeless two-tone steel and gold,designed to hold value and command respect.
+A Rolex doesn’t chase attention.
+It arrives with it.
+For those who understand that luxury is history you can wear.`,
+      image: '/images/rolex.jpeg',
+      price: '₦22,000',
     },
   ];
 

@@ -278,6 +278,13 @@ Relaxed fit, structured feel designed for comfort, styled for presence.`,
       image: '/images/jersey.jpeg',
       price: '₦22,000',
     },
+    {
+      name: 'Manchester United 1998-2000 Retro Jersey',
+      category: 'Jersey',
+      description: `Classic Manchester United football jersey from the 1998-2000 seasons. A nostalgic piece for Red Devils supporters.`,
+      image: '/images/jersey_1.jpeg',
+      price: '₦22,000',
+    },
   ];
 
   const handleWhatsAppClick = (itemName: string) => {
