@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Jewelry from './pages/Jewelry';
 import Perfumes from './pages/Perfumes';
 import Clothing from './pages/Clothing';
-import MensWear from './pages/MensWear';
 import Caps from './pages/Caps';
 import Slides from './pages/Slides';
 import Fabrics from './pages/Fabrics';
@@ -15,6 +14,7 @@ import Eyeglasses from './pages/Eyeglasses';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import Search from './pages/Search';
 
 function App() {
   return (
@@ -26,7 +26,6 @@ function App() {
           <Route path="/jewelry" element={<Jewelry />} />
           <Route path="/perfumes" element={<Perfumes />} />
           <Route path="/clothing" element={<Clothing />} />
-          <Route path="/mens-wear" element={<MensWear />} />
           <Route path="/caps" element={<Caps />} />
           <Route path="/slides" element={<Slides />} />
           <Route path="/fabrics" element={<Fabrics />} />
@@ -35,6 +34,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
         <Footer />
         <WhatsAppButton />

@@ -1,8 +1,463 @@
-import { useState } from 'react';
-import { ExternalLink, MessageCircle } from 'lucide-react';
+import { useState, useMemo } from 'react';
+
+interface ClothingItemType {
+  id: number;
+  name: string;
+  price: string | number;
+  image: string;
+  gender: 'men' | 'women';
+  category: string;
+  description: string;
+}
+
+type CategoryFilter = 'all' | 'men' | 'women';
+
+import { ChevronDown, ChevronUp, ExternalLink, MessageCircle } from 'lucide-react';
 import ImageModal from '../components/ImageModal';
 
-export default function Clothing() {
+const clothingItems: ClothingItemType[] = [
+  {
+    id: 1,
+    name: "The Green Regal Poise Gown ✨",
+    price: 25000,
+    image: "/images/clothing_3.png",
+    gender: 'women',
+    category: 'gown',
+    description: `Statement kaftan-style gown made from brocade fabric 
+perfect for cultural gatherings, elegant outings, and everyday luxury.
+This isn’t just fashion.
+It’s heritage in motion. 💛`,
+  },
+  {
+    id: 2,
+    name: "The Orange Regal Poise Gown ✨",
+    price: 25000,
+    image: "/images/clothing_6.png",
+    gender: 'women',
+    category: 'gown',
+    description: `Statement kaftan-style gown made from brocade fabric 
+perfect for cultural gatherings, elegant outings, and everyday luxury.
+This isn’t just fashion.
+It’s heritage in motion. 💛`,
+  },
+  {
+    id: 3,
+    name: "The Midnight Stud Denim Shorts ✨",
+    price: 20000,
+    image: "/images/shorts.jpg",
+    gender: 'men',
+    category: 'shorts',
+    description: `A deep black wash with subtle stud detailing that catches light without screaming for attention. 
+Relaxed fit, structured feel designed for comfort, styled for presence.`,
+  },
+  {
+    id: 4,
+    name: "UNDISPUTED LUXURY SHORTS ✨",
+    price: 20000,
+    image: "/images/shorts_2.jpg",
+    gender: 'men',
+    category: 'shorts',
+    description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+  },
+  {
+    id: 5,
+    name: "UNDISPUTED LUXURY SHORTS ✨",
+    price: 20000,
+    image: "/images/shorts_3.jpg",
+    gender: 'men',
+    category: 'shorts',
+    description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+  },
+  {
+    id: 6,
+    name: "The Classic Ivory Boubou 🤍",
+    price: 16000,
+    image: "/images/clothing_7.png",
+    gender: 'women',
+    category: 'gown',
+    description: `Soft luxury flowing, free-size boubou designed for effortless elegance, featuring subtle front buttons and adjustable inner fitting for a perfect, graceful drape.
+Available in multiple colours.
+Perfect for outings, errands, events, or days you want for effortless class.`,
+  },
+  {
+    id: 7,
+    name: "The Royal Violet Poise Gown ✨",
+    price: 25000,
+    image: "/images/clothing_8.png",
+    gender: 'women',
+    category: 'gown',
+    description: `Statement kaftan-style gown made from brocade fabric 
+      perfect for cultural gatherings, elegant outings, and everyday luxury.
+      This isn’t just fashion.
+      It’s heritage in motion. 💛`,
+  },
+  {
+    id: 8,
+    name: "The Aurelia Heritage Boubou ✨",
+    price: 25000,
+    image: "/images/clothing_9.png",
+    gender: 'women',
+    category: 'boubou',
+    description: 'Royal mustard gold with intricate woven embroidery along a deep V-neckline.\nA flowing, full-length silhouette designed for ease, grace, and undeniable presence.💛',
+  },
+  {
+    id: 9,
+    name: "Aurelia Flow 🤍",
+    price: 16000,
+    image: "/images/clothing_10.png",
+    gender: 'women',
+    category: 'gown',
+    description: `Soft V-neckline (front & back)
+      Adjustable tie sleeves
+      Flattering cinched waist
+      Where strength meets softness.
+      Designed to move with you, not against you. ✨💙`,
+  },
+  {
+    id: 10,
+    name: "The Rosé Whisper Boubou 🎀",
+    price: 16000,
+    image: "/images/clothing_11.png",
+    gender: 'women',
+    category: 'dresses',
+    description: `A flowing, free-fit silhouette with a soft V-neck and delicate ribbon details.
+      For the woman who leads with softness and shows up with presence.`,
+  },
+  {
+    id: 11,
+    name: "The Blue Regal Poise Gown ✨",
+    price: 25000,
+    image: "/images/clothing_12.png",
+    gender: 'women',
+    category: 'gown',
+    description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn’t just fashion.\nIt’s heritage in motion. 💛`,
+  },
+  {
+    id: 12,
+    name: "The Red Regal Poise Gown ✨",
+    price: 25000,
+    image: "/images/clothing_13.png",
+    gender: 'women',
+    category: 'gown',
+    description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn’t just fashion.\nIt’s heritage in motion. 💛`,
+  },
+  {
+    id: 13,
+    name: "UNDISPUTED LUXURY SHORTS ✨",
+    price: 20000,
+    image: "/images/shorts_3.jpg",
+    gender: 'men',
+    category: 'shorts',
+    description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+  },
+  {
+    id: 14,
+   name: "UNDISPUTED LUXURY SHORTS ✨",
+    price: 20000,
+    image: "/images/shorts_4.jpg",
+    gender: 'men',
+    category: 'shorts',
+    description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+  },
+  {
+    id: 15,
+   name: "UNDISPUTED LUXURY SHORTS ✨",
+    price: 20000,
+    image: "/images/shorts_5.jpg",
+    gender: 'men',
+    category: 'shorts',
+    description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+  },
+  {
+    id: 16,
+   name: "UNDISPUTED LUXURY SHORTS ✨",
+    price: 20000,
+    image: "/images/shorts_6.jpg",
+    gender: 'men',
+    category: 'shorts',
+    description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+  },
+  {
+    id: 17,
+   name: "UNDISPUTED LUXURY SHORTS ✨",
+    price: 20000,
+    image: "/images/shorts_7.jpg",
+    gender: 'men',
+    category: 'shorts',
+    description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+  },
+  {
+    id: 18,
+   name: "UNDISPUTED LUXURY SHORTS ✨",
+    price: 20000,
+    image: "/images/shorts_8.jpg",
+    gender: 'men',
+    category: 'shorts',
+    description: `UNDISPUTED LUXURY 📟📟
+      BEST QUALITY 💯💯
+      TOP NOTCH 🏞
+      Available in different sizes`,
+  },
+  {
+    id: 19,
+   name: "The AXEPEAK 07 Polo Jersey ✨",
+    price: 25000,
+    image: "/images/shirt_1.jpg",
+    gender: 'men',
+    category: 'shirts',
+    description: `Athletic codes with street confidence relaxed fit, bold graphics, and a structure that sits right without trying too hard.`,
+  },
+  {
+    id: 20,
+   name: "The AXEPEAK 07 Polo Jersey ✨",
+    price: 25000,
+    image: "/images/shirt_2.jpg",
+    gender: 'men',
+    category: 'shirts',
+    description: `Athletic codes with street confidence relaxed fit, bold graphics, and a structure that sits right without trying too hard.`,
+  },
+  {
+    id: 21,
+   name: "The Riviera Crest Tee ✨",
+    price: 25000,
+    image: "/images/shirt_3.JPG",
+    gender: 'men',
+    category: 'shirts',
+    description: `Classic European insignia with modern street ease. Relaxed fit, bold black base, and crisp white detailing that feels intentional, not loud.`,
+  },
+  {
+    id: 22,
+    name: "GATHER JOGGERS ✨",
+    price: 26000,
+    image: "/images/joggers_1.JPG",
+    gender: "men",
+    category: "joggers",
+    description: `Comfort meets style in these premium joggers. Tailored fit with high-quality fabric for everyday elegance.`,
+  },
+  {
+    id: 23,
+    name: "GATHER JOGGERS ✨",
+    price: 26000,
+    image: "/images/joggers_2.JPG",
+    gender: "men",
+    category: "joggers",
+    description: `Comfort meets style in these premium joggers. Tailored fit with high-quality fabric for everyday elegance.`,
+  },
+  {
+    id: 24,
+    name: "GATHER JOGGERS ✨",
+    price: 26000,
+    image: "/images/joggers_3.JPG",
+    gender: "men",
+    category: "joggers",
+    description: `Comfort meets style in these premium joggers. Tailored fit with high-quality fabric for everyday elegance.`,
+  },
+  {
+    id: 25,
+    name: "GATHER JOGGERS ✨",
+    price: 26000,
+    image: "/images/joggers_4.JPG",
+    gender: "men",
+    category: "joggers",
+    description: `Comfort meets style in these premium joggers. Tailored fit with high-quality fabric for everyday elegance.`,
+  },
+  {
+    id: 26,
+    name: "UPSPEED STUDIO ✨",
+    price: 18000,
+    image: "/images/armless_1.jpeg",
+    gender: "men",
+    category: "shirts",
+    description: `Elevate your casual wardrobe with this premium armless shirt. Sleek design, comfortable fit, and versatile style for any occasion.`,
+  },
+  {
+    id: 27,
+    name: "Champion Saint",
+    price: 18000,
+    image: "/images/armless_2.jpeg",
+    gender: "men",
+    category: "shirts",
+    description: `Elevate your casual wardrobe with this premium armless shirt. Sleek design, comfortable fit, and versatile style for any occasion.`,
+  },
+  {
+    id: 28,
+    name: "Balaclava Hoodie",
+    price: 36000,
+    image: "/images/hoodie_1.JPG",
+    gender: "men",
+    category: "hoodies",
+    description: `Stay warm and stylish with this premium balaclava hoodie. Perfect for outdoor activities and casual wear.`,
+  },
+  {
+    id: 29,
+    name: "Balaclava Hoodie",
+    price: 36000,
+    image: "/images/hoodie_2.JPG",
+    gender: "men",
+    category: "hoodies",
+    description: `Stay warm and stylish with this premium balaclava hoodie. Perfect for outdoor activities and casual wear.`,
+  },
+  {
+    id: 30,
+    name: "Balaclava Hoodie",
+    price: 36000,
+    image: "/images/hoodie_3.JPG",
+    gender: "men",
+    category: "hoodies",
+    description: `Stay warm and stylish with this premium balaclava hoodie. Perfect for outdoor activities and casual wear.`,
+  },
+  {
+    id: 31,
+    name: "Balaclava Hoodie",
+    price: 36000,
+    image: "/images/hoodie_4.JPG",
+    gender: "men",
+    category: "hoodies",
+    description: `Stay warm and stylish with this premium balaclava hoodie. Perfect for outdoor activities and casual wear.`,
+  },
+  {
+    id: 34,
+    name: "LUXURY TEE",
+    price: 15000,
+    image: "/images/tee_1.JPG",
+    gender: "men",
+    category: "tees",
+    description: `Premium quality fabric with a sleek design for everyday elegance.`,
+  },
+  {
+    id: 35,
+    name: "LUXURY TEE",
+    price: 15000,
+    image: "/images/tee_2.JPG",
+    gender: "men",
+    category: "tees",
+    description: `Premium quality fabric with a sleek design for everyday elegance.`,
+  },
+  {
+    id: 36,
+    name: "LUXURY TEE",
+    price: 15000,
+    image: "/images/tee_3.JPG",
+    gender: "men",
+    category: "tees",
+    description: `Premium quality fabric with a sleek design for everyday elegance.`,
+  },
+  {
+    id: 37,
+    name: "LUXURY TEE",
+    price: 15000,
+    image: "/images/tee_4.JPG",
+    gender: "men",
+    category: "tees",
+    description: `Premium quality fabric with a sleek design for everyday elegance.`,
+  },
+  {
+    id: 38,
+    name: "LUXURY TEE",
+    price: 15000,
+    image: "/images/tee_5.JPG",
+    gender: "men",
+    category: "tees",
+    description: `Premium quality fabric with a sleek design for everyday elegance.`,
+  },
+  {
+    id: 39,
+    name: "Reebok Liverpool FC Jersey",
+    price: 23000,
+    image: "/images/retro_1.JPG",
+    gender: "men",
+    category: "retro",
+    description: `Official Liverpool FC jersey by Reebok. Show your support in style with this premium quality football shirt.`,
+  },
+  {
+    id: 40,
+    name: 'Adidas Argentina Jersey',
+    price: 23000,
+    image: '/images/retro_2.JPG',
+    gender: "men",
+    category: "retro",
+    description: `Classic Argentina football jersey by Adidas. A must-have for any football enthusiast.`,
+  },
+  {
+    id: 41,
+    name: "AC Milan Retro Jersey",
+    price: 23000,
+    image: "/images/retro_3.JPG",
+    gender: "men",
+    category: "retro",
+    description: `Vintage AC Milan football jersey. Celebrate the legacy of one of football's greatest clubs with this retro shirt.`,
+  },
+  {
+    id: 42,
+    name: "Umbro England Retro Jersey",
+    price: 23000,
+    image: "/images/retro_4.JPG",
+    gender: "men",
+    category: "retro",
+    description: `Classic England football jersey by Umbro. A timeless piece for fans of the Three Lions.`,
+  },
+  {
+    id: 43,
+    name: "Umbro Chelsea F.C. Vintage Jersey",
+    price: 23000,
+    image: "/images/retro_5.JPG",
+    gender: "men",
+    category: "retro",
+    description: `Vintage Chelsea F.C. football jersey by Umbro. Show your Blues pride with this classic piece.`,
+  },
+  {
+    id: 44,
+    name: "Reebok Sporting CP Retro Jersey",
+    price: 23000,
+    image: "/images/retro_6.JPG",
+    gender: "men",
+    category: "retro",
+    description: `Classic Sporting CP football jersey by Reebok. A must-have for fans of the Portuguese giants.`,
+  },
+  {
+    id: 45,
+    name: "IRON MAIDEN SPECIAL EDITION VINTAGE KIT",
+    price: 22000,
+    image: "/images/jersey.jpeg",
+    gender: "men",
+    category: "jersey",
+    description: `Limited edition Iron Maiden vintage football kit. A unique blend of music and sport for true fans.`,
+  },
+  {
+    id: 46,
+    name: 'Manchester United 1998-2000 Retro Jersey',
+    price: 22000,
+    image: '/images/jersey_1.jpeg',
+    gender: 'men',
+    category: 'jersey',
+    description: `Classic Manchester United football jersey from the 1998-2000 seasons. A nostalgic piece for Red Devils supporters.`,
+  },
+];
+
+export default function ClothingCollection() {
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>('all');
+  const [showAll, setShowAll] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedImage, setSelectedImage] = useState<{
     src: string;
@@ -10,87 +465,24 @@ export default function Clothing() {
     title: string;
   } | null>(null);
 
-  const clothingItems = [
-    {
-      name: 'The Green Regal Poise Gown ✨',
-      category: 'Gowns',
-      description: `Statement kaftan-style gown made from brocade fabric 
-perfect for cultural gatherings, elegant outings, and everyday luxury.
-This isn’t just fashion.
-It’s heritage in motion. 💛`,
-      image: '/images/clothing_3.png',
-      price: '₦25,000',
-    },
-    {
-      name: 'The Orange Regal Poise Gown ✨',
-      category: 'Gowns',
-      description: `Statement kaftan-style gown made from brocade fabric 
-perfect for cultural gatherings, elegant outings, and everyday luxury.
-This isn’t just fashion.
-It’s heritage in motion. 💛`,
-      image: '/images/clothing_6.png',
-      price: '₦25,000',
-    },
-    {
-      name: 'The Classic Ivory Boubou 🤍',
-      category: 'Traditional',
-      description: `Soft luxury flowing, free-size boubou designed for effortless elegance, featuring subtle front buttons and adjustable inner fitting for a perfect, graceful drape.
-Available in multiple colours.
-Perfect for outings, errands, events, or days you want for effortless class.`,
-      image: '/images/clothing_7.png',
-      price: '₦16,000',
-    },
-    {
-      name: 'The Royal Violet Poise Gown ✨',
-      category: 'Gowns',
-      description: `Statement kaftan-style gown made from brocade fabric 
-      perfect for cultural gatherings, elegant outings, and everyday luxury.
-      This isn’t just fashion.
-      It’s heritage in motion. 💛`,
-      image: '/images/clothing_8.png',
-      price: '₦25,000',
-    },
-    {
-       name: 'The Aurelia Heritage Boubou ✨',
-      category: 'Boubou',
-      description: 'Royal mustard gold with intricate woven embroidery along a deep V-neckline.\nA flowing, full-length silhouette designed for ease, grace, and undeniable presence.💛',
-      image: '/images/clothing_9.png',
-      price: '₦25,000',
-    },
-    {
-      name: 'Aurelia Flow 🤍',
-      category: 'V-Neck Dress',
-      description: `Soft V-neckline (front & back)
-      Adjustable tie sleeves
-      Flattering cinched waist
-      Where strength meets softness.
-      Designed to move with you, not against you. ✨💙`,
-      image: '/images/clothing_10.png',
-      price: '₦16,000',
-    },
-    {
-      name: 'The Rosé Whisper Boubou 🎀',
-      category: 'Boubou',
-      description: `A flowing, free-fit silhouette with a soft V-neck and delicate ribbon details.
-      For the woman who leads with softness and shows up with presence.`,
-      image: '/images/clothing_11.png',
-      price: '₦16,000',
-    },
-    {
-      name: 'The Blue Regal Poise Gown ✨',
-      category: 'Gowns',
-      description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn’t just fashion.\nIt’s heritage in motion. 💛`,
-      image: '/images/clothing_12.png',
-      price: '₦25,000',
-    },
-    {
-      name: 'The Red Regal Poise Gown ✨',
-      category: 'Gowns',
-      description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn’t just fashion.\nIt’s heritage in motion. 💛`,
-      image: '/images/clothing_13.png',
-      price: '₦25,000',
-    },
-  ];
+  const filteredItems = useMemo(() => {
+    if (activeCategory === 'all') return clothingItems;
+    return clothingItems.filter(item => item.gender === activeCategory);
+  }, [activeCategory]);
+
+  const displayedItems = showAll ? filteredItems : filteredItems.slice(0, 6);
+  const hasMoreItems = filteredItems.length > 6;
+
+  const getCategoryTitle = () => {
+    switch (activeCategory) {
+      case 'men':
+        return "Men's Wear";
+      case 'women':
+        return "Women's Wear";
+      default:
+        return "All Collections";
+    }
+  };
 
   const handleWhatsAppClick = (itemName: string) => {
     const message = `Hello! I'm interested in the ${itemName}. Can you provide more details?`;
@@ -98,115 +490,170 @@ Perfect for outings, errands, events, or days you want for effortless class.`,
   };
 
   return (
-    <div className="min-h-screen pt-20">
-      <section className="py-16 px-4 bg-gradient-to-br from-stone-50 to-amber-50">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
-            Clothing Collection
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Fashion Collection
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Embrace elegance with our carefully curated collection of premium fashion pieces, designed for the modern Nigerian woman.
+            Discover our curated selection of premium clothing for every style
           </p>
-        </div>
-      </section>
+        </header>
 
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {clothingItems.map((item, index) => (
-              <div
-                key={index}
-                className="group cursor-pointer"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <div className="relative aspect-[3/4] bg-gradient-to-br from-stone-100 to-amber-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover cursor-pointer hover:brightness-105 transition-all"
-                    onClick={() => setSelectedImage({ src: item.image, alt: item.name, title: item.name })}
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                  <div
-                    className={`absolute inset-0 bg-black transition-opacity duration-300 ${
-                      hoveredIndex === index ? 'opacity-20' : 'opacity-0'
-                    }`}
-                  ></div>
-
-                  <div
-                    className={`absolute inset-0 flex items-center justify-center gap-3 transition-transform duration-300 ${
-                      hoveredIndex === index ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-                    }`}
-                  >
-                    <button
-                      onClick={() => setSelectedImage({ src: item.image, alt: item.name, title: item.name })}
-                      className="flex items-center justify-center gap-2 px-4 py-2 bg-white/90 hover:bg-white text-gray-900 rounded-lg transition-all font-medium"
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                      View
-                    </button>
-                    <button
-                      onClick={() => handleWhatsAppClick(item.name)}
-                      className="flex items-center justify-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-all font-medium"
-                    >
-                      <MessageCircle className="h-4 w-4" />
-                      Inquire
-                    </button>
-                  </div>
-                </div>
-
-                <div className="mt-4 text-center">
-                  <p className="text-xs text-amber-600 font-medium uppercase tracking-wide mb-1">
-                    {item.category}
-                  </p>
-                  <h3 className="text-lg font-serif font-semibold text-gray-900 mb-2">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-600">
-                    {item.description}
-                  </p>
-                   <p className="text-lg font-semibold text-amber-600">
-                    {item.price}
-                  </p>
-                </div>
-              </div>
-            ))}
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex bg-white rounded-lg shadow-md p-1">
+            <button
+              onClick={() => {
+                setActiveCategory('all');
+                setShowAll(false);
+              }}
+              className={`px-6 py-3 rounded-md font-medium transition-all duration-200 ${
+                activeCategory === 'all'
+                  ? 'bg-gray-900 text-white shadow-md'
+                  : 'text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              All Items
+            </button>
+            <button
+              onClick={() => {
+                setActiveCategory('men');
+                setShowAll(false);
+              }}
+              className={`px-6 py-3 rounded-md font-medium transition-all duration-200 ${
+                activeCategory === 'men'
+                  ? 'bg-gray-900 text-white shadow-md'
+                  : 'text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              Men's Wear
+            </button>
+            <button
+              onClick={() => {
+                setActiveCategory('women');
+                setShowAll(false);
+              }}
+              className={`px-6 py-3 rounded-md font-medium transition-all duration-200 ${
+                activeCategory === 'women'
+                  ? 'bg-gray-900 text-white shadow-md'
+                  : 'text-gray-700 hover:bg-gray-100'
+              }`}
+            >
+              Women's Wear
+            </button>
           </div>
         </div>
-      </section>
 
-      <section className="py-16 px-4 bg-gradient-to-br from-stone-50 to-amber-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
-            Find Your Perfect Style
+        <div className="mb-8">
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 text-center">
+            {getCategoryTitle()}
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Get in touch with us to learn more about our clothing collection, sizes, and custom tailoring options.
+          <p className="text-center text-gray-600 mt-2">
+            {filteredItems.length} {filteredItems.length === 1 ? 'item' : 'items'} available
           </p>
-          <a
-            href="https://wa.me/2348124238750?text=Hello! I'm interested in your clothing collection."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors shadow-lg font-medium"
-          >
-            <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-            </svg>
-            Chat on WhatsApp
-          </a>
         </div>
-      </section>
 
-      <ImageModal
-        isOpen={selectedImage !== null}
-        imageSrc={selectedImage?.src || ''}
-        imageAlt={selectedImage?.alt || ''}
-        imageTitle={selectedImage?.title || ''}
-        onClose={() => setSelectedImage(null)}
-      />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {displayedItems.map((item, index) => (
+            <div
+              key={item.id}
+              className="group cursor-pointer"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className="relative aspect-square bg-gradient-to-br from-amber-100 to-stone-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 mb-4">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-full object-cover hover:brightness-105 transition-all"
+                  onClick={() =>
+                    setSelectedImage({
+                      src: item.image,
+                      alt: item.name,
+                      title: item.name,
+                    })
+                  }
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <div
+                  className={`absolute inset-0 bg-black transition-opacity duration-300 ${
+                    hoveredIndex === index ? 'opacity-20' : 'opacity-0'
+                  }`}
+                ></div>
+
+                <div
+                  className={`absolute inset-0 flex items-center justify-center gap-3 transition-transform duration-300 ${
+                    hoveredIndex === index ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
+                  }`}
+                >
+                  <button
+                    onClick={() =>
+                      setSelectedImage({
+                        src: item.image,
+                        alt: item.name,
+                        title: item.name,
+                      })
+                    }
+                    className="flex items-center justify-center gap-2 px-4 py-2 bg-white/90 hover:bg-white text-gray-900 rounded-lg transition-all font-medium"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    View
+                  </button>
+                  <button
+                    onClick={() => handleWhatsAppClick(item.name)}
+                    className="flex items-center justify-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-all font-medium"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    Inquire
+                  </button>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">
+                  {item.name}
+                </h3>
+                <h3 className='text-sm font-medium text-gray-600 mb-1'>
+                    {item.description}
+                </h3>
+                <p className="text-lg font-semibold text-amber-600">₦{typeof item.price === 'number' ? item.price.toFixed(2) : item.price}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {hasMoreItems && (
+          <div className="flex justify-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="group flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full font-medium shadow-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+            >
+              {showAll ? (
+                <>
+                  View Less
+                  <ChevronUp className="w-5 h-5 transition-transform group-hover:-translate-y-1" />
+                </>
+              ) : (
+                <>
+                  View More
+                  <ChevronDown className="w-5 h-5 transition-transform group-hover:translate-y-1" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
+
+        <ImageModal
+          isOpen={selectedImage !== null}
+          imageSrc={selectedImage?.src || ''}
+          imageAlt={selectedImage?.alt || ''}
+          imageTitle={selectedImage?.title || ''}
+          onClose={() => setSelectedImage(null)}
+        />
+      </div>
     </div>
   );
 }

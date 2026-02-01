@@ -1,19 +1,28 @@
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, Search } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
+      setSearchQuery('');
+    }
+  };
 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Jewelry', path: '/jewelry' },
     { name: 'Perfumes', path: '/perfumes' },
     { name: 'Clothing', path: '/clothing' },
-    {name: 'Mens Wear', path: '/mens-wear' },
     { name: 'Caps', path: '/caps' },
     {name: 'Slides', path: '/slides' },
     { name: 'Fabrics', path: '/fabrics' },
@@ -37,7 +46,7 @@ export default function Navbar() {
             </p>
           </Link>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 flex-1 ml-12">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -53,9 +62,27 @@ export default function Navbar() {
             ))}
           </div>
 
+          <form onSubmit={handleSearch} className="hidden md:flex items-center">
+            <div className="relative">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search products..."
+                className="px-4 py-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-white focus:ring-2 focus:ring-amber-600 w-48"
+              />
+              <button
+                type="submit"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-amber-600"
+              >
+                <Search className="h-4 w-4" />
+              </button>
+            </div>
+          </form>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -63,8 +90,25 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="lg:hidden bg-white border-t">
           <div className="px-4 py-4 space-y-3">
+            <form onSubmit={handleSearch} className="md:hidden mb-4">
+              <div className="relative">
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search products..."
+                  className="w-full px-4 py-2 text-sm bg-gray-100 rounded-lg focus:outline-none focus:bg-white focus:ring-2 focus:ring-amber-600"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-amber-600"
+                >
+                  <Search className="h-4 w-4" />
+                </button>
+              </div>
+            </form>
             {navLinks.map((link) => (
               <Link
                 key={link.path}

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { ExternalLink, MessageCircle } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { ExternalLink, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import ImageModal from '../components/ImageModal';
 
 export default function Jewelry() {
@@ -9,6 +9,7 @@ export default function Jewelry() {
     alt: string;
     title: string;
   } | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const jewelryItems = [
     {
@@ -252,6 +253,12 @@ Just meaning… and clean style.`,
     },
   ];
 
+  const displayedItems = useMemo(() => {
+    return showAll ? jewelryItems : jewelryItems.slice(0, 8);
+  }, [showAll]);
+
+  const hasMoreItems = jewelryItems.length > 8;
+
   const handleWhatsAppClick = (itemName: string) => {
     const message = `Hello! I'm interested in the ${itemName}. Can you provide more details?`;
     window.open(`https://wa.me/2348124238750?text=${encodeURIComponent(message)}`, '_blank');
@@ -272,8 +279,8 @@ Just meaning… and clean style.`,
 
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {jewelryItems.map((item, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {displayedItems.map((item, index) => (
               <div
                 key={index}
                 className="group cursor-pointer"
@@ -328,13 +335,34 @@ Just meaning… and clean style.`,
                   <p className="text-sm text-gray-600">
                     {item.description}
                   </p>
-                   <p className="text-lg font-semibold text-amber-600">
+                  <p className="text-lg font-semibold text-amber-600">
                     {item.price}
                   </p>
                 </div>
               </div>
             ))}
           </div>
+
+          {hasMoreItems && (
+            <div className="flex justify-center">
+              <button
+                onClick={() => setShowAll(!showAll)}
+                className="group flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full font-medium shadow-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+              >
+                {showAll ? (
+                  <>
+                    View Less
+                    <ChevronUp className="w-5 h-5 transition-transform group-hover:-translate-y-1" />
+                  </>
+                ) : (
+                  <>
+                    View More
+                    <ChevronDown className="w-5 h-5 transition-transform group-hover:translate-y-1" />
+                  </>
+                )}
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
