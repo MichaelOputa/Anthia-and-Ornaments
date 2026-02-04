@@ -15,31 +15,31 @@ export default function Eyeglasses() {
       name: 'Designer Prada Eyeglasses',
       description: 'Stylish frames with premium lenses for clear vision under the sun',
       image: '/images/prada.png',
-      price: '',
+      price: '₦20,000',
     },
     {
       name: 'Cartier Gradient Lens Eyeglasses',
       description: 'Luxury frames with gradient lenses for a sophisticated look',
       image: '/images/cartier.png',
-      price: '',
+      price: '₦20,000',
     },
     {
         name: 'Vintage Round Frame Eyeglasses',
         description: 'Timeless round frames for a vintage-inspired style',
         image: '/images/prada_2.png',
-        price: '',
+        price: '₦22,000',
     },
     {
         name: 'Chic Square Frame Eyeglasses',
         description: 'Chic square frames for a contemporary appearance',
         image: '/images/prada_3.png',
-        price: '',
+        price: '₦20,000',
     },
     {
         name: 'Transparent Frame Eyeglasses',
         description: 'Transparent frames for a modern and versatile look',
         image: '/images/prada_4.png',
-        price: '',
+        price: '₦22,000',
     },
   ];
 

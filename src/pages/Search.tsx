@@ -49,17 +49,107 @@ export default function Search() {
       description: 'Premium designer eyeglasses for clear vision and style',
       image: '/images/prada.png',
       type: 'eyeglass',
-      price: '',
+      price: '22,000',
     },
     {
       id: 4,
-      name: 'Casual T-Shirt',
+      name: 'The Blue Regal Poise Gown ✨',
       category: 'Clothing',
       description: 'Comfortable cotton t-shirt for everyday wear',
       image: '/images/clothing_1.jpg',
       type: 'clothing',
       price: '25,000',
     },
+    {
+      id: 5,
+      name: 'Pana Dora Swiss Oud',
+      category: 'Perfumes',
+      description: 'Experience the allure of our designer perfumes, crafted to captivate your senses and leave a lasting impression.',
+      image: '/images/pandora.jpeg',
+      type: 'perfume',
+      price: '125,000',
+    },
+    {
+      id: 6,
+      name: 'Designer Cap',
+      category: 'Caps',
+      description: 'These caps are made for easy days and intentional fits clean embroidery, structured shape, and colors that slide effortlessly into your wardrobe.',
+      image: '/images/cap_5.jpeg',
+      type: 'cap',
+      price: '15,000',
+    },
+    {
+      id: 7,
+      name: 'The Rosé Whisper Boubou 🎀',
+      category: 'Gown',
+      description: `A flowing, free-fit silhouette with a soft V-neck and delicate ribbon details.
+      For the woman who leads with softness and shows up with presence.`,
+      image: '/images/clothing_11.png',
+      type: 'clothing',
+      price: '16,000',
+    },
+    {
+      id: 8,
+      name: 'The Cherry Bloom Necklace',
+      category: 'Jewelry',
+      description: `Soft. Playful. Feminine. Memorable.
+
+      Sweet, but not childish 🍒
+      Because soft girls still like to be noticed.`,
+      image: '/images/necklace_3.png',
+      type: 'jewelry',
+      price: '6,500',
+    },
+    {
+      id: 9,
+      name: 'SWISS voile lace WITH embroidery LACE',
+      category: 'Lace',
+      description: `NEW DESIGN
+WITH SWAROVSKI GoldSTONES`,
+      image: '/images/Swiss Chiffon_11.JPG',
+      type: 'lace',
+      price: '60,000',
+    },
+    {
+      id: 10,
+      name: 'ALDO Designer Slides',
+      category: 'Slides',
+      description: `Effortless comfort meets everyday luxury.
+An every day essential with a luxury edge.
+Designed for comfort, styled for confidence.`,
+      image: '/images/slide_18.jpg',
+      type: 'slides',
+      price: '25,000',
+    },
+    {
+      id: 11,
+      name: 'The Tomi Signature Gentleman Set',
+      category: 'Wristwatches',
+      description: `For the man who likes his style clean, intentional, and timeless.
+No noise.
+Just class.`,
+      image: '/images/Tomi_1.jpg',
+      type: 'wristwatch',
+      price: '40,000',
+    },
+    {
+      id: 12,
+      name: 'The Red Regal Poise Gown ✨',
+      category: 'Gown',
+      description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn’t just fashion.\nIt’s heritage in motion. 💛`,
+      image: '/images/clothing_13.png',
+      type: 'clothing',
+      price: '25,000',
+    },
+    {
+      id: 13,
+      name: 'The Aurelia Heritage Boubou ✨',
+      category: 'Gown',
+      description: 'Royal mustard gold with intricate woven embroidery along a deep V-neckline.\nA flowing, full-length silhouette designed for ease, grace, and undeniable presence.💛',
+      image: '/images/clothing_9.png',
+      type: 'clothing',
+      price: '25,000',
+    }
   ];
 
   const searchResults = useMemo(() => {
