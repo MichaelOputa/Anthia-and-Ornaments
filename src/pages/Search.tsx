@@ -107,19 +107,8 @@ export default function Search() {
       description: `NEW DESIGN
 WITH SWAROVSKI GoldSTONES`,
       image: '/images/Swiss Chiffon_11.JPG',
-      type: 'lace',
+      type: 'fabric',
       price: '60,000',
-    },
-    {
-      id: 10,
-      name: 'ALDO Designer Slides',
-      category: 'Slides',
-      description: `Effortless comfort meets everyday luxury.
-An every day essential with a luxury edge.
-Designed for comfort, styled for confidence.`,
-      image: '/images/slide_18.jpg',
-      type: 'slides',
-      price: '25,000',
     },
     {
       id: 11,
