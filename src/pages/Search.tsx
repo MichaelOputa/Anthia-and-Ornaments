@@ -111,6 +111,16 @@ WITH SWAROVSKI GoldSTONES`,
       price: '60,000',
     },
     {
+      id: 10,
+      name: 'Necklace Set',
+      category: 'Necklaces',
+      description: `Delicate gold-tone necklaces, each designed to sit softly and speak quietly.
+      Timeless symbols, refined finishes, and effortless layering perfect for everyday elegance or subtle statements.`,
+      image: '/images/necklace_set.png',
+      type: 'jewelry',
+      price: '15,000',
+    },
+    {
       id: 11,
       name: 'The Tomi Signature Gentleman Set',
       category: 'Wristwatches',
