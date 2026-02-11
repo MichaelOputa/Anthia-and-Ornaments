@@ -6,9 +6,6 @@ import Home from './pages/Home';
 import Jewelry from './pages/Jewelry';
 import Perfumes from './pages/Perfumes';
 import Clothing from './pages/Clothing';
-import Caps from './pages/Caps';
-import Slides from './pages/Slides';
-import Fabrics from './pages/Fabrics';
 import Wristwatches from './pages/Wristwatches';
 import Eyeglasses from './pages/Eyeglasses';
 import Gallery from './pages/Gallery';
@@ -26,9 +23,6 @@ function App() {
           <Route path="/jewelry" element={<Jewelry />} />
           <Route path="/perfumes" element={<Perfumes />} />
           <Route path="/clothing" element={<Clothing />} />
-          <Route path="/caps" element={<Caps />} />
-          <Route path="/slides" element={<Slides />} />
-          <Route path="/fabrics" element={<Fabrics />} />
           <Route path="/wristwatches" element={<Wristwatches />} />
           <Route path="/eyeglasses" element={<Eyeglasses />} />
           <Route path="/gallery" element={<Gallery />} />

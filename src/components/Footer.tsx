@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin } from 'lucide-react';
+import { ShoppingBag, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -8,6 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
+              <ShoppingBag className="h-5 w-5 text-amber-500" />
               <span className="text-xl font-serif font-semibold text-white">
                 Anthia & Ornaments
               </span>

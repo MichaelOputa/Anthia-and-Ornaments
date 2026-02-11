@@ -1,62 +1,64 @@
-import { useState } from 'react';
-import { Image as ImageIcon, Video } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { Image as ImageIcon, Video, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState<'images' | 'videos'>('images');
+  const [showAllImages, setShowAllImages] = useState(false);
+  const [showAllVideos, setShowAllVideos] = useState(false);
 
   const galleryImages = [
     {
-      url: '/images/Tomi_1.jpg',
-      title: 'Luxury Packaged Wristwatch',
-      description: 'Elegant wristwatch in premium packaging',
+      url: '/images/bracelet_2.jpg',
+      title: 'Silver Bracelet Collection',
+      description: 'Elegant silver bracelets with premium craftsmanship',
     },
     {
-      url: '/images/bracelet_1.jpg',
-      title: 'Chain Bracelet Set',
-      description: 'Stylish chain design for everyday wear',
+      url: '/images/gallery/image-1.jpg',
+      title: 'Gallery Image 1',
+      description: 'Exquisite jewelry showcase',
     },
     {
-      url: '/images/bracelet_3.jpg',
-      title: 'Gold Bracelet Set 2',
-      description: 'Luxury design highlights',
+      url: '/images/gallery/image-2.jpg',
+      title: 'Gallery Image 2',
+      description: 'Fashion accessories collection',
     },
     {
-      url: '/images/bracelet_4.jpg',
-      title: 'Silver Bracelet',
-      description: 'Modern elegance in silver',
+      url: '/images/gallery/image-3.jpg',
+      title: 'Gallery Image 3',
+      description: 'Premium design showcase',
     },
     {
-      url: '/images/Organza_3.jpg',
-      title: 'Organza Dress Collection',
-      description: 'Flowy and elegant organza dresses for special occasions',
+      url: '/images/gallery/image-4.jpg',
+      title: 'Gallery Image 4',
+      description: 'Luxury collection details',
     },
     {
-      url: '/images/wristwatch_1.jpg',
-      title: 'Wristwatch Collection',
-      description: 'Timeless wristwatches for every occasion',
+      url: '/images/gallery/image-5.jpg',
+      title: 'Gallery Image 5',
+      description: 'Artisan craftsmanship',
     },
     {
-      url: '/images/clothing_1.jpg',
-      title: 'The Blue Regal Poise Gown ✨',
-      description: 'Elegant gown perfect for special occasions',
+      url: '/images/gallery/image-6.jpg',
+      title: 'Gallery Image 6',
+      description: 'Contemporary designs',
     },
     {
-      url: '/images/prada.png',
-      title: 'Premium Black Frame Sunglasses',
-      description: 'Sleek black frames with UV protection',
+      url: '/images/gallery/image-7.jpg',
+      title: 'Gallery Image 7',
+      description: 'Elegant collection',
     },
     {
-      url: '/images/rings_1.jpg',
-      title: 'Statement Rings',
-      description: 'Bold and sophisticated ring designs',
+      url: '/images/gallery/image-8.jpg',
+      title: 'Gallery Image 8',
+      description: 'Sophisticated accessories',
     },
   ];
 
   const galleryVideos = [
     {
-      url: '/videos/bracelet-1.mp4',
+      url: '/videos/wristwatch_1.mp4',
       title: 'Collection Showcase 1',
-      description: 'Highlighting our exquisite jewelry pieces',
+      description: 'Behind-the-scenes look at our craftsmanship',
     },
     {
       url: '/videos/clothing_1.mp4',
@@ -64,16 +66,24 @@ export default function Gallery() {
       description: 'Styling tips and fashion inspiration',
     },
     {
-      url: '/videos/wristwatch_1.mp4',
+      url: '/videos/bracelet-1.mp4',
       title: 'Collection Showcase 3',
-      description: 'Timeless wristwatches for every occasion',
+      description: 'Product highlights and details',
     },
     {
       url: '/videos/wristwatch_2.mp4',
       title: 'Collection Showcase 4',
-      description: 'Explore our elegant wristwatch designs',
+      description: 'Customer testimonials and reviews',
     },
   ];
+
+  const displayedImages = useMemo(() => {
+    return showAllImages ? galleryImages : galleryImages.slice(0, 6);
+  }, [showAllImages]);
+
+  const displayedVideos = useMemo(() => {
+    return showAllVideos ? galleryVideos : galleryVideos.slice(0, 2);
+  }, [showAllVideos]);
 
   return (
     <div className="min-h-screen pt-20">
@@ -118,8 +128,9 @@ export default function Gallery() {
           </div>
 
           {activeTab === 'images' && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {galleryImages.map((image, index) => (
+            <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                {displayedImages.map((image, index) => (
                 <a
                   key={index}
                   href={image.url}
@@ -140,13 +151,36 @@ export default function Gallery() {
                     <p className="text-gray-100 text-sm">{image.description}</p>
                   </div>
                 </a>
-              ))}
+                ))}
+              </div>
+
+              {galleryImages.length > 6 && (
+                <div className="flex justify-center">
+                  <button
+                    onClick={() => setShowAllImages(!showAllImages)}
+                    className="group flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full font-medium shadow-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+                  >
+                    {showAllImages ? (
+                      <>
+                        View Less
+                        <ChevronUp className="w-5 h-5 transition-transform group-hover:-translate-y-1" />
+                      </>
+                    ) : (
+                      <>
+                        View More
+                        <ChevronDown className="w-5 h-5 transition-transform group-hover:translate-y-1" />
+                      </>
+                    )}
+                  </button>
+                </div>
+              )}
             </div>
           )}
 
           {activeTab === 'videos' && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {galleryVideos.map((video, index) => (
+            <div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                {displayedVideos.map((video, index) => (
                 <a
                   key={index}
                   href={video.url}
@@ -164,7 +198,29 @@ export default function Gallery() {
                     </div>
                   </div>
                 </a>
-              ))}
+                ))}
+              </div>
+
+              {galleryVideos.length > 2 && (
+                <div className="flex justify-center">
+                  <button
+                    onClick={() => setShowAllVideos(!showAllVideos)}
+                    className="group flex items-center gap-2 bg-gray-900 text-white px-8 py-4 rounded-full font-medium shadow-lg hover:bg-gray-800 transition-all duration-300 transform hover:scale-105"
+                  >
+                    {showAllVideos ? (
+                      <>
+                        View Less
+                        <ChevronUp className="w-5 h-5 transition-transform group-hover:-translate-y-1" />
+                      </>
+                    ) : (
+                      <>
+                        View More
+                        <ChevronDown className="w-5 h-5 transition-transform group-hover:translate-y-1" />
+                      </>
+                    )}
+                  </button>
+                </div>
+              )}
             </div>
           )}
         </div>

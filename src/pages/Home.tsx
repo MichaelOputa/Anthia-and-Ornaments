@@ -28,28 +28,10 @@ export default function Home() {
       link: '/clothing',
     },
     {
-      title: 'Beautiful Fabrics',
-      description: 'Luxurious textiles for every occasion',
-      image: '/images/Chiffon Lace_9.jpg',
-      link: '/fabrics',
-    },
-    {
       title: 'Luxury Wristwatches',
       description: 'Timeless designs to elevate your look',
       image: '/images/chanel_3.jpg',
       link: '/wristwatches',
-    },
-    {
-      title: 'Stylish Slides',
-      description: 'Comfort meets fashion in our slide collection',
-      image: '/images/slide_9.jpg',
-      link: '/slides',
-    },
-    {
-      title: 'Chic Caps',
-      description: 'Trendy caps to complete your outfit',
-      image: '/images/cap_7.jpeg',
-      link: '/caps',
     },
   ];
 
@@ -103,13 +85,6 @@ export default function Home() {
               className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-900 rounded-lg transition-colors font-medium"
             >
               Shop Wristwatches
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Link>
-            <Link
-              to="/fabrics"
-              className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl font-medium"
-            >
-              Shop Fabrics
               <ChevronRight className="ml-2 h-5 w-5" />
             </Link>
           </div>

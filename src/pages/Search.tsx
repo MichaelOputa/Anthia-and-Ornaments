@@ -10,7 +10,7 @@ interface Product {
   description: string;
   image: string;
   price?: string | number;
-  type: 'jewelry' | 'clothing' | 'eyeglass' | 'fabric' | 'cap' | 'slide' | 'wristwatch' | 'perfume';
+  type: 'jewelry' | 'clothing' | 'eyeglass' | 'fabric';
 }
 
 export default function Search() {
@@ -70,15 +70,6 @@ export default function Search() {
       price: '125,000',
     },
     {
-      id: 6,
-      name: 'Designer Cap',
-      category: 'Caps',
-      description: 'These caps are made for easy days and intentional fits clean embroidery, structured shape, and colors that slide effortlessly into your wardrobe.',
-      image: '/images/cap_5.jpeg',
-      type: 'cap',
-      price: '15,000',
-    },
-    {
       id: 7,
       name: 'The Rosé Whisper Boubou 🎀',
       category: 'Gown',
@@ -99,16 +90,6 @@ export default function Search() {
       image: '/images/necklace_3.png',
       type: 'jewelry',
       price: '6,500',
-    },
-    {
-      id: 9,
-      name: 'SWISS voile lace WITH embroidery LACE',
-      category: 'Lace',
-      description: `NEW DESIGN
-WITH SWAROVSKI GoldSTONES`,
-      image: '/images/Swiss Chiffon_11.JPG',
-      type: 'fabric',
-      price: '60,000',
     },
     {
       id: 10,
@@ -148,7 +129,7 @@ Just class.`,
       image: '/images/clothing_9.png',
       type: 'clothing',
       price: '25,000',
-    }
+    },
   ];
 
   const searchResults = useMemo(() => {
