@@ -13,32 +13,16 @@ export default function Jewelry() {
 
   const jewelryItems = [
     {
-      name: 'Pearl Blossom Set',
-      category: 'Necklaces',
-      description: `Delicate florals, kissed with subtle shimmer.
-      Light, graceful, and quietly feminine.
-      The kind of piece that feels like summer on the skin.
-      Earrings and necklace.`,
-      image: '/images/pearl necklace_8.jpg',
-      price: '₦28,000',
+      name: 'Gift Box',
+      category: 'Varieties',
+      description: 'A beautifully packaged gift box for your special occasions.',
+      image: '/images/gift box.jpeg',
     },
     {
-      name: 'Necklace Set',
-      category: 'Necklaces',
-      description: `Delicate gold-tone necklaces, each designed to sit softly and speak quietly.
-      Timeless symbols, refined finishes, and effortless layering perfect for everyday elegance or subtle statements.`,
-      image: '/images/necklace_set.png',
-      price: '₦15,000 each',
-    },
-    {
-      name: 'Rose Necklace Set',
-      category: 'Necklaces',
-      description: `Delicate floral earrings and necklace set.
-      Light, graceful, and softly radiant designed to complement effortlessly and elevate every look.
-
-      Available in different colors.`,
-      image: '/images/rose necklace_14.jpg',
-      price: '₦18,000',
+      name: 'Gift Package',
+      category: 'Varieties',
+      description: 'A curated gift package that includes a selection of our finest jewelry pieces.',
+      image: '/images/gift package.jpeg',
     },
     {
       name: 'The Cherry Bloom Necklace',
@@ -210,45 +194,185 @@ Just meaning… and clean style.`,
       price: '₦15,000',
     },
     {
-      name: 'Bare Intent Waist Chain',
-      category: 'Waist Chains',
-      description: `A quiet detail that transforms the simplest look into something intentional`,
-      image: '/images/chain_1.jpg',
+      name: 'Kaleia Aeris Earrings',
+      category: 'Earrings',
+      description: `Delicate, yet impactful. These earrings are designed to add a touch of elegance and sparkle to your everyday style.`,
+      image: '/images/earring_1.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Ice Cream Cone-Shaped Dangle Earrings',
+      category: 'Earrings',
+      description: `Fun and whimsical, these earrings are designed to add a playful touch to your look while still maintaining a sense of style and sophistication.`,
+      image: '/images/earring_2.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Han Kou',
+      category: 'Earrings',
+      description: `A bold and unique design that combines traditional elements with a modern twist, making it a statement piece for those who want to stand out with their jewelry choices.`,
+      image: '/images/earring_3.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Pearl Ear Studs',
+      category: 'Earrings',
+      description: `Elegant and timeless, these pearl ear studs are perfect for adding a touch of classic sophistication to any outfit.`,
+      image: '/images/earring_4.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Gold-Toned Flower Earrings',
+      category: 'Earrings',
+      description: `These delicate gold-toned flower earrings are designed to add a touch of elegance and charm to any outfit.`,
+      image: '/images/earring_5.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Statement Dangle Earrings',
+      category: 'Earrings',
+      description: `Bold and eye-catching, these statement dangle earrings are designed to add a touch of drama and flair to your look, making them perfect for special occasions or when you want to make a statement with your jewelry.`,
+      image: '/images/earring_6.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Twisted Hoop Pearl Earrings',
+      category: 'Earrings',
+      description: `A modern twist on the classic hoop earring, these twisted hoop pearl earrings are designed to add a touch of elegance and sophistication to your style.`,
+      image: '/images/earring_7.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Gold-Plated Double Hoop Earrings',
+      category: 'Earrings',
+      description: `These gold-plated double hoop earrings are designed to add a touch of glamour and sophistication to your look, making them perfect for both casual and formal occasions.`,
+      image: '/images/earring_8.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Gold-Plated Flower Stud Earrings',
+      category: 'Earrings',
+      description: `These gold-plated flower stud earrings are designed to add a touch of elegance and femininity to your style, making them perfect for everyday wear or special occasions.`,
+      image: '/images/earring_9.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Gold-Toned Sculptural Floral Earrings',
+      category: 'Earrings',
+      description: `These sculptural floral earrings are designed with a gold-toned finish, adding a touch of elegance and sophistication to your look.`,
+      image: '/images/earring_10.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Floral Gold-Toned Stud Earrings',
+      category: 'Earrings',
+      description: `These floral gold-toned stud earrings are designed to add a touch of elegance and femininity to your style, making them perfect for everyday wear or special occasions.`,
+      image: '/images/earring_11.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Vintage Tiered Gold-Tone Flower',
+      category: 'Earrings',
+      description: `These vintage tiered gold-tone flower earrings are designed to add a touch of elegance and sophistication to your look, making them perfect for both casual and formal occasions.`,
+      image: '/images/earring_12.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Gold-Plated Art Deco Swirl Dangle',
+      category: 'Earrings',
+      description: `These gold-plated art deco swirl dangle earrings are designed to add a touch of vintage glamour and sophistication to your look, making them perfect for special occasions or when you want to make a statement with your jewelry.`,
+      image: '/images/earring_13.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Gold-colored filigree studs featuring a central faux pearl',
+      category: 'Earrings',
+      description: `These gold-colored filigree studs featuring a central faux pearl are designed to add a touch of elegance and sophistication to your look, making them perfect for everyday wear or special occasions.`,
+      image: '/images/earring_14.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Gold-Toned Wire Bow Earrings',
+      category: 'Earrings',
+      description: `These gold-toned wire bow earrings are designed to add a touch of elegance and sophistication to your look, making them perfect for everyday wear or special occasions.`,
+      image: '/images/earring_15.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Gold-Colored Flower Earrings featuring a metallic floral design',
+      category: 'Earrings',
+      description: `These gold-colored flower earrings feature a metallic floral design, adding a touch of elegance and sophistication to your look.`,
+      image: '/images/earring_16.jpeg',
+      price: '₦4,599',
+    },
+    {
+      name: 'Square Charm Necklace',
+      category: 'Necklaces',
+      description: `A statement necklace that combines intricate design with a touch of glamour, making it the perfect accessory for any occasion.`,
+      image: '/images/necklace-1.jpeg',
+      price: '₦7,000',
+    },
+    {
+      name: "Golden Tanmaniya Necklace",
+      category: "Necklaces",
+      description: `A stunning gold chain necklace with a delicate pendant, perfect for adding a touch of luxury to any outfit.`,
+      image: '/images/necklace-2.jpeg',
+      price: '₦7,000',
+    },
+    {
+      name: 'Palmonas Golden Dragonfly Dance Necklace',
+      category: 'Necklaces',
+      description: `A whimsical necklace featuring a golden dragonfly pendant, designed to add a touch of enchantment and elegance to your look.`,
+      image: '/images/necklace-3.jpeg',
+      price: '₦7,000',
+    },
+    {
+      name: 'Golden Hearts Layered Necklace',
+      category: 'Necklaces',
+      description: `A layered necklace featuring delicate golden hearts, perfect for adding a romantic and feminine touch to your ensemble.`,
+      image: '/images/necklace-4.jpeg',
+      price: '₦7,000',
+    },
+    {
+      name: 'Gold Necklace',
+      category: 'Necklaces',
+      description: `A classic gold necklace that adds a touch of elegance and sophistication to any outfit, making it a timeless accessory for every jewelry collection.`,
+      image: '/images/necklace-5.jpeg',
+      price: '₦7,000',
+    },
+    {
+      name: 'Sparrow Gold Necklace',
+      category: 'Necklaces',
+      description: `A delicate gold necklace featuring a charming sparrow pendant, designed to add a touch of whimsy and elegance to your everyday style.`,
+      image: '/images/necklace-6.jpeg',
+      price: '₦7,000',
+    },
+    {
+      name: 'The Vita Ambita Kai bracelet',
+      category: 'Bracelets',
+      description: `A bold and unique bracelet that combines intricate design with a touch of glamour, making it the perfect accessory for any occasion.`,
+      image: '/images/gold bracelet.jpeg',
+      price: '₦6,500 each',
+    },
+    {
+      name: 'Cartier Juste un Clou style bangle.',
+      category: 'Bracelets',
+      description: `A sleek and modern bangle that adds a touch of sophistication and edge to any outfit, making it a must-have accessory for those who appreciate contemporary jewelry design.`,
+      image: '/images/cartier bracelet.jpeg',
+      price: '₦6,000',
+    },
+    {
+      name: 'Jewelry Set',
+      category: 'Sets',
+      description: `A stunning jewelry set that includes a necklace, bracelet, and earrings, designed to add a touch of elegance and glamour to any special occasion.`,
+      image: '/images/jewelry set.jpeg',
       price: '₦15,000',
     },
     {
-      name: 'Bare Intent Waist Chain',
-      category: 'Waist Chains',
-      description: `A quiet detail that transforms the simplest look into something intentional.`,
-      image: '/images/chain_2.jpg',
-      price: '₦15,000',
-    },
-    {
-      name: 'Bare Intent Waist Chain',
-      category: 'Waist Chains',
-      description: `A quiet detail that transforms the simplest look into something intentional.`,
-      image: '/images/chain_3.jpg',
-      price: '₦15,000',
-    },
-    {
-      name: 'Bare Intent Waist Chain',
-      category: 'Waist Chains',
-      description: `A quiet detail that transforms the simplest look into something intentional.`,
-      image: '/images/chain_4.jpg',
-      price: '₦15,000',
-    },
-    {
-      name: 'Bare Intent Waist Chain',
-      category: 'Waist Chains',
-      description: `A quiet detail that transforms the simplest look into something intentional.`,
-      image: '/images/chain_5.jpg',
-      price: '₦15,000',
-    },
-    {
-      name: 'Bare Intent Waist Chain',
-      category: 'Waist Chains',
-      description: `A quiet detail that transforms the simplest look into something intentional.`,
-      image: '/images/chain_6.jpg',
+      name: 'Gold-Plated Teardrop Necklace, earring, and bangle jewelry set. ',
+      category: 'Sets',
+      description: `A beautiful gold-plated jewelry set featuring a teardrop necklace, earring, and bangle, perfect for adding a touch of elegance and glamour to any outfit.`,
+      image: '/images/gold set.jpeg',
       price: '₦15,000',
     },
   ];
@@ -289,10 +413,10 @@ Just meaning… and clean style.`,
               >
                 <div className="relative aspect-square bg-gradient-to-br from-amber-100 to-stone-200 rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
                   <img
-                    src={item.image}
+                    src={item.image || ''}
                     alt={item.name}
                     className="w-full h-full object-cover cursor-pointer hover:brightness-105 transition-all"
-                    onClick={() => setSelectedImage({ src: item.image, alt: item.name, title: item.name })}
+                    onClick={() => setSelectedImage({ src: item.image || '', alt: item.name, title: item.name })}
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
                     }}
@@ -309,7 +433,7 @@ Just meaning… and clean style.`,
                     }`}
                   >
                     <button
-                      onClick={() => setSelectedImage({ src: item.image, alt: item.name, title: item.name })}
+                      onClick={() => setSelectedImage({ src: item.image || '', alt: item.name, title: item.name })}
                       className="flex items-center justify-center gap-2 px-4 py-2 bg-white/90 hover:bg-white text-gray-900 rounded-lg transition-all font-medium"
                     >
                       <ExternalLink className="h-4 w-4" />

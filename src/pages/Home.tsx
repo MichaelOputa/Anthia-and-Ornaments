@@ -12,7 +12,7 @@ export default function Home() {
     {
       title: 'Exquisite Jewelry',
       description: 'Handcrafted pieces that tell your story',
-      image: '/images/necklace_set.png',
+      image: '/images/jewelry set.jpeg',
       link: '/jewelry',
     },
     {

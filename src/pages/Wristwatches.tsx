@@ -381,6 +381,20 @@ For those who understand that luxury is history you can wear.`,
       image: '/images/rolex.jpeg',
       price: '₦22,000',
     },
+    {
+      name: 'Rolex Oyster Perpetual Day-Date Watch',
+      category: 'Wristwatches',
+      description: `The Rolex Oyster Perpetual Day-Date Watch is a timeless masterpiece that combines elegance with precision. With its iconic design and exceptional craftsmanship, it stands as a symbol of luxury and sophistication.`,
+      image: '/images/rolex-1.jpeg',
+      price: '₦45,000 box inclusive',
+    },
+    {
+      name: 'Casio quartz wristwatch set with a matching bracelet.',
+      category: 'Wristwatches',
+      description: `A sleek and stylish Casio quartz wristwatch paired with a matching bracelet. This set combines functionality with fashion, making it a perfect accessory for any occasion.`,
+      image: '/images/casio.jpeg',
+      price: '₦35,000 box inclusive',
+    },
   ];
 
   const handleWhatsAppClick = (itemName: string) => {
