@@ -205,8 +205,7 @@ export default function ClothingCollection() {
                 </h3>
                 <h3 className="text-sm text-gray-600 mb-2">{item.category}</h3>
                 <h3 className="text-sm text-gray-900 mb-2 whitespace-pre-line">{item.description}</h3>
-                <p className="text-amber-7
-                00 text-sm mb-2">₦{item.price.toFixed(2)}</p>
+                <p className="text-lg font-semibold text-amber-600">₦{item.price.toFixed(2)}</p>
               </div>
             </div>
           ))}
