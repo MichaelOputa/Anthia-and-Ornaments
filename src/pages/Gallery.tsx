@@ -1,81 +1,56 @@
 import { useState, useMemo } from 'react';
 import { Image as ImageIcon, Video, ChevronDown, ChevronUp } from 'lucide-react';
 
+const galleryImages = [
+  {
+    url: '/images/bracelet_2.jpg',
+    title: 'Silver Bracelet Collection',
+    description: 'Elegant silver bracelets with premium craftsmanship',
+  },
+  {
+    url: '/images/clothing_2.png',
+    title: 'Boubou Collection',
+    description: 'Flowing, free-size boubou designed for effortless elegance',
+  },
+  {
+    url: '/images/perfume_2.JPG',
+    title: 'Perfume Collection',
+    description: 'Best fragrances for everyday elegance',
+  },
+  {
+    url: '/images/poedagar_1.jpg',
+    title: 'Poedagar Collection',
+    description: 'Luxurious poeders for a radiant glow',
+  }
+];
+
+const galleryVideos = [
+  {
+    url: '/videos/wristwatch_1.mp4',
+    title: 'Collection Showcase 1',
+    description: 'Behind-the-scenes look at our craftsmanship',
+  },
+  {
+    url: '/videos/clothing_1.mp4',
+    title: 'Collection Showcase 2',
+    description: 'Styling tips and fashion inspiration',
+  },
+  {
+    url: '/videos/bracelet-1.mp4',
+    title: 'Collection Showcase 3',
+    description: 'Product highlights and details',
+  },
+  {
+    url: '/videos/wristwatch_2.mp4',
+    title: 'Collection Showcase 4',
+    description: 'Customer testimonials and reviews',
+  },
+];
+
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState<'images' | 'videos'>('images');
   const [showAllImages, setShowAllImages] = useState(false);
   const [showAllVideos, setShowAllVideos] = useState(false);
-
-  const galleryImages = [
-    {
-      url: '/images/bracelet_2.jpg',
-      title: 'Silver Bracelet Collection',
-      description: 'Elegant silver bracelets with premium craftsmanship',
-    },
-    {
-      url: '/images/gallery/image-1.jpg',
-      title: 'Gallery Image 1',
-      description: 'Exquisite jewelry showcase',
-    },
-    {
-      url: '/images/gallery/image-2.jpg',
-      title: 'Gallery Image 2',
-      description: 'Fashion accessories collection',
-    },
-    {
-      url: '/images/gallery/image-3.jpg',
-      title: 'Gallery Image 3',
-      description: 'Premium design showcase',
-    },
-    {
-      url: '/images/gallery/image-4.jpg',
-      title: 'Gallery Image 4',
-      description: 'Luxury collection details',
-    },
-    {
-      url: '/images/gallery/image-5.jpg',
-      title: 'Gallery Image 5',
-      description: 'Artisan craftsmanship',
-    },
-    {
-      url: '/images/gallery/image-6.jpg',
-      title: 'Gallery Image 6',
-      description: 'Contemporary designs',
-    },
-    {
-      url: '/images/gallery/image-7.jpg',
-      title: 'Gallery Image 7',
-      description: 'Elegant collection',
-    },
-    {
-      url: '/images/gallery/image-8.jpg',
-      title: 'Gallery Image 8',
-      description: 'Sophisticated accessories',
-    },
-  ];
-
-  const galleryVideos = [
-    {
-      url: '/videos/wristwatch_1.mp4',
-      title: 'Collection Showcase 1',
-      description: 'Behind-the-scenes look at our craftsmanship',
-    },
-    {
-      url: '/videos/clothing_1.mp4',
-      title: 'Collection Showcase 2',
-      description: 'Styling tips and fashion inspiration',
-    },
-    {
-      url: '/videos/bracelet-1.mp4',
-      title: 'Collection Showcase 3',
-      description: 'Product highlights and details',
-    },
-    {
-      url: '/videos/wristwatch_2.mp4',
-      title: 'Collection Showcase 4',
-      description: 'Customer testimonials and reviews',
-    },
-  ];
 
   const displayedImages = useMemo(() => {
     return showAllImages ? galleryImages : galleryImages.slice(0, 6);
@@ -131,26 +106,26 @@ export default function Gallery() {
             <div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                 {displayedImages.map((image, index) => (
-                <a
-                  key={index}
-                  href={image.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative aspect-square bg-gradient-to-br from-amber-100 to-stone-200 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer block"
-                >
-                  <img
-                    src={image.url}
-                    alt={image.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                    <h3 className="text-white font-semibold text-lg mb-1">{image.title}</h3>
-                    <p className="text-gray-100 text-sm">{image.description}</p>
-                  </div>
-                </a>
+                  <a
+                    key={index}
+                    href={image.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-square bg-gradient-to-br from-amber-100 to-stone-200 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer block"
+                  >
+                    <img
+                      src={image.url}
+                      alt={image.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = 'none';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                      <h3 className="text-white font-semibold text-lg mb-1">{image.title}</h3>
+                      <p className="text-gray-100 text-sm">{image.description}</p>
+                    </div>
+                  </a>
                 ))}
               </div>
 
@@ -181,23 +156,23 @@ export default function Gallery() {
             <div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
                 {displayedVideos.map((video, index) => (
-                <a
-                  key={index}
-                  href={video.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group relative aspect-video bg-gradient-to-br from-stone-100 to-amber-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer block"
-                >
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
-                    <div className="text-center p-4 z-10">
-                      <div className="inline-flex items-center justify-center w-16 h-16 bg-white/90 rounded-full group-hover:bg-white transition-colors mb-3">
-                        <Video className="h-8 w-8 text-amber-600" />
+                  <a
+                    key={index}
+                    href={video.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative aspect-video bg-gradient-to-br from-stone-100 to-amber-100 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all cursor-pointer block"
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
+                      <div className="text-center p-4 z-10">
+                        <div className="inline-flex items-center justify-center w-16 h-16 bg-white/90 rounded-full group-hover:bg-white transition-colors mb-3">
+                          <Video className="h-8 w-8 text-amber-600" />
+                        </div>
+                        <h3 className="text-white font-semibold text-lg mb-1">{video.title}</h3>
+                        <p className="text-gray-100 text-sm">{video.description}</p>
                       </div>
-                      <h3 className="text-white font-semibold text-lg mb-1">{video.title}</h3>
-                      <p className="text-gray-100 text-sm">{video.description}</p>
                     </div>
-                  </div>
-                </a>
+                  </a>
                 ))}
               </div>
 

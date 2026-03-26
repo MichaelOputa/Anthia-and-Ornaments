@@ -76,60 +76,60 @@ export default function Wristwatches() {
       price: '₦25,000',
     },
     {
-        name: 'POEDAGAR LEATHER WRISTWATCHES',
-        category: 'Wristwatches',
-        description:`WATERPROOFS WITH SAPPHIRE GLASS,COMES WITH BRANDED BOX,WARRANTY CARD AND CARRIER BAG`,
-        image: '/images/poedagar_1.jpg',
-        price: '₦40,000',
+      name: 'POEDAGAR LEATHER WRISTWATCHES',
+      category: 'Wristwatches',
+      description: `WATERPROOFS WITH SAPPHIRE GLASS, COMES WITH BRANDED BOX, WARRANTY CARD AND CARRIER BAG`,
+      image: '/images/poedagar_1.jpg',
+      price: '₦40,000',
     },
     {
-        name: 'POEDAGAR LEATHER WRISTWATCHES',
-        category: 'Wristwatches',
-        description:`WATERPROOFS WITH SAPPHIRE GLASS,COMES WITH BRANDED BOX,WARRANTY CARD AND CARRIER BAG`,
-        image: '/images/poedagar_2.jpg',
-        price: '₦40,000',
+      name: 'POEDAGAR LEATHER WRISTWATCHES',
+      category: 'Wristwatches',
+      description: `WATERPROOFS WITH SAPPHIRE GLASS, COMES WITH BRANDED BOX, WARRANTY CARD AND CARRIER BAG`,
+      image: '/images/poedagar_2.jpg',
+      price: '₦40,000',
     },
     {
-        name: 'POEDAGAR LEATHER WRISTWATCHES',
-        category: 'Wristwatches',
-        description:`WATERPROOFS WITH SAPPHIRE GLASS,COMES WITH BRANDED BOX,WARRANTY CARD AND CARRIER BAG`,
-        image: '/images/poedagar_3.jpg',
-        price: '₦40,000',
+      name: 'POEDAGAR LEATHER WRISTWATCHES',
+      category: 'Wristwatches',
+      description: `WATERPROOFS WITH SAPPHIRE GLASS, COMES WITH BRANDED BOX, WARRANTY CARD AND CARRIER BAG`,
+      image: '/images/poedagar_3.jpg',
+      price: '₦40,000',
     },
     {
-        name: 'POEDAGAR LEATHER WRISTWATCHES',
-        category: 'Wristwatches',
-        description:`WATERPROOFS WITH SAPPHIRE GLASS,COMES WITH BRANDED BOX,WARRANTY CARD AND CARRIER BAG`,
-        image: '/images/poedagar_4.jpg',
-        price: '₦40,000',
+      name: 'POEDAGAR LEATHER WRISTWATCHES',
+      category: 'Wristwatches',
+      description: `WATERPROOFS WITH SAPPHIRE GLASS, COMES WITH BRANDED BOX, WARRANTY CARD AND CARRIER BAG`,
+      image: '/images/poedagar_4.jpg',
+      price: '₦40,000',
     },
     {
-        name: 'POEDAGAR LEATHER WRISTWATCHES',
-        category: 'Wristwatches',
-        description:`WATERPROOFS WITH SAPPHIRE GLASS,COMES WITH BRANDED BOX,WARRANTY CARD AND CARRIER BAG`,
-        image: '/images/poedagar_5.jpg',
-        price: '₦40,000',
+      name: 'POEDAGAR LEATHER WRISTWATCHES',
+      category: 'Wristwatches',
+      description: `WATERPROOFS WITH SAPPHIRE GLASS, COMES WITH BRANDED BOX, WARRANTY CARD AND CARRIER BAG`,
+      image: '/images/poedagar_5.jpg',
+      price: '₦40,000',
     },
     {
-        name: 'POEDAGAR LEATHER WRISTWATCHES',
-        category: 'Wristwatches',
-        description:`WATERPROOFS WITH SAPPHIRE GLASS,COMES WITH BRANDED BOX,WARRANTY CARD AND CARRIER BAG`,
-        image: '/images/poedagar_6.jpg',
-        price: '₦40,000',
+      name: 'POEDAGAR LEATHER WRISTWATCHES',
+      category: 'Wristwatches',
+      description: `WATERPROOFS WITH SAPPHIRE GLASS, COMES WITH BRANDED BOX, WARRANTY CARD AND CARRIER BAG`,
+      image: '/images/poedagar_6.jpg',
+      price: '₦40,000',
     },
     {
-        name: 'POEDAGAR LEATHER WRISTWATCHES',
-        category: 'Wristwatches',
-        description:`WATERPROOFS WITH SAPPHIRE GLASS,COMES WITH BRANDED BOX,WARRANTY CARD AND CARRIER BAG`,
-        image: '/images/poedagar_7.jpg',
-        price: '₦40,000',
+      name: 'POEDAGAR LEATHER WRISTWATCHES',
+      category: 'Wristwatches',
+      description: `WATERPROOFS WITH SAPPHIRE GLASS, COMES WITH BRANDED BOX, WARRANTY CARD AND CARRIER BAG`,
+      image: '/images/poedagar_7.jpg',
+      price: '₦40,000',
     },
     {
-        name: 'POEDAGAR LEATHER WRISTWATCHES',
-        category: 'Wristwatches',
-        description:`WATERPROOFS WITH SAPPHIRE GLASS,COMES WITH BRANDED BOX,WARRANTY CARD AND CARRIER BAG`,
-        image: '/images/poedagar_8.jpg',
-        price: '₦40,000',
+      name: 'POEDAGAR LEATHER WRISTWATCHES',
+      category: 'Wristwatches',
+      description: `WATERPROOFS WITH SAPPHIRE GLASS, COMES WITH BRANDED BOX, WARRANTY CARD AND CARRIER BAG`,
+      image: '/images/poedagar_8.jpg',
+      price: '₦40,000',
     },
     {
       name: 'Anthiaornaments | POEDAGAR',
@@ -137,12 +137,12 @@ export default function Wristwatches() {
       description: `Built for structure. 
 Designed for everyday precision.
 
-Poedagar features a chronograph-style dial,layered with sub-dials that add depth, balance, and a sporty edge.
+Poedagar features a chronograph-style dial, layered with sub-dials that add depth, balance, and a sporty edge.
 Finished with a smooth leather strap
 that sits comfortably on the wrist and elevates the overall look.
-The leather adds warmth, flexibility, and ease,making it suitable for daily wear without losing its sharp appeal.
+The leather adds warmth, flexibility, and ease, making it suitable for daily wear without losing its sharp appeal.
 This is not about excess.
-It’s about function, form, and confidence.
+It's about function, form, and confidence.
 Chronograph-inspired.
 Leather-finished.
 Refined, without trying too hard.`,
@@ -150,112 +150,103 @@ Refined, without trying too hard.`,
       price: '₦35,000',
     },
     {
-        name: 'The Tomi Signature Gentleman Set',
-        category: 'Wristwatches',
-        description: `For the man who likes his style clean, intentional, and timeless.
+      name: 'The Tomi Signature Gentleman Set',
+      category: 'Wristwatches',
+      description: `For the man who likes his style clean, intentional, and timeless.
 No noise.
 Just class.`,
-        image: '/images/Tomi_1.jpg',
-        price: '₦40,000',
+      image: '/images/Tomi_1.jpg',
+      price: '₦40,000',
     },
     {
-        name: 'The Tomi Signature Gentleman Set',
-        category: 'Wristwatches',
-        description: `For the man who likes his style clean, intentional, and timeless.
-No noise.
-Just class.`,
-        image: '/images/Tomi_1.jpg',
-        price: '₦40,000',
-    },
-    {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_1.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_1.jpg',
+      price: '₦125,000',
     },
     {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_2.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_2.jpg',
+      price: '₦125,000',
     },
     {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_3.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_3.jpg',
+      price: '₦125,000',
     },
     {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_4.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_4.jpg',
+      price: '₦125,000',
     },
     {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_5.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_5.jpg',
+      price: '₦125,000',
     },
     {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_6.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_6.jpg',
+      price: '₦125,000',
     },
     {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_7.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_7.jpg',
+      price: '₦125,000',
     },
     {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_8.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_8.jpg',
+      price: '₦125,000',
     },
     {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_9.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_9.jpg',
+      price: '₦125,000',
     },
     {
-        name: 'Vacheron Constantin',
-        category: 'Wristwatches',
-        description: `Sleek design with a refined finish that speaks presence and precision.
+      name: 'Vacheron Constantin',
+      category: 'Wristwatches',
+      description: `Sleek design with a refined finish that speaks presence and precision.
 Crafted for those who appreciate timeless style and elevated performance.`,
-        image: 'images/Vacheron_10.jpg',
-        price: '₦125,000',
+      image: '/images/Vacheron_10.jpg',
+      price: '₦125,000',
     },
     {
       name: '✨THE ROLEX EDIT✨',
       category: 'Wristwatches',
       description: `For legacy. For presence. For quiet authority.
-This isn’t about telling time.
-It’s about what time has already told about you.
+This isn't about telling time.
+It's about what time has already told about you.
 Crafted with iconic detailing,
-finished in timeless two-tone steel and gold,designed to hold value and command respect.
-A Rolex doesn’t chase attention.
+finished in timeless two-tone steel and gold, designed to hold value and command respect.
+A Rolex doesn't chase attention.
 It arrives with it.
 For those who understand that luxury is history you can wear.`,
       image: '/images/rolex.jpeg',
@@ -290,7 +281,7 @@ For those who understand that luxury is history you can wear.`,
             Wristwatch Collection
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our exquisite wristwatch, each piece designed to add elegance and sparkle to your style.
+            Discover our exquisite wristwatch collection, each piece designed to add elegance and sparkle to your style.
           </p>
         </div>
       </section>
@@ -353,7 +344,7 @@ For those who understand that luxury is history you can wear.`,
                   <p className="text-sm text-gray-600">
                     {item.description}
                   </p>
-                   <p className="text-lg font-semibold text-amber-600">
+                  <p className="text-lg font-semibold text-amber-600">
                     {item.price}
                   </p>
                 </div>
@@ -366,13 +357,13 @@ For those who understand that luxury is history you can wear.`,
       <section className="py-16 px-4 bg-gradient-to-br from-amber-50 to-stone-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
-            Interested in Our Jewelry?
+            Interested in Our Wristwatches?
           </h2>
           <p className="text-lg text-gray-600 mb-8">
             Contact us on WhatsApp to inquire about availability, pricing, and custom orders.
           </p>
           <a
-            href="https://wa.me/2348124238750?text=Hello! I'm interested in your jewelry collection."
+            href="https://wa.me/2348124238750?text=Hello! I'm interested in your wristwatch collection."
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors shadow-lg font-medium"

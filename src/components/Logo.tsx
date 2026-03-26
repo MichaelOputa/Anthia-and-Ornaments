@@ -1,9 +1,6 @@
 export default function Logo() {
   return (
     <div className="flex flex-col items-start">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-      `}</style>
       <div className="flex items-baseline space-x-1">
         <h1
           className="text-3xl md:text-4xl font-light text-white"

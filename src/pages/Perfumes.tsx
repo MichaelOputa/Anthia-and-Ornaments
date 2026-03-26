@@ -59,7 +59,7 @@ export default function Perfumes() {
       image: '/images/perfume_5.JPG',
       price: '₦12,000',
     },
-{
+    {
       name: 'AZZARO THE MOST WANTED',
       description: `Experience the allure of our designer perfumes, crafted to captivate your senses and leave a lasting impression.`,
       image: '/images/perfume_6.JPG',
@@ -101,10 +101,10 @@ export default function Perfumes() {
       <section className="py-16 px-4 bg-gradient-to-br from-amber-50 to-stone-50">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-serif font-bold text-gray-900 mb-6">
-           Perfumes Collection
+            Perfumes Collection
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our premium selection of best fragrance perfumes, .
+            Discover our premium selection of designer fragrances, crafted to captivate your senses.
           </p>
         </div>
       </section>
@@ -177,10 +177,10 @@ export default function Perfumes() {
       <section className="py-16 px-4 bg-gradient-to-br from-amber-50 to-stone-50">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">
-            More Styles Coming Soon
+            More Fragrances Coming Soon
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            We're constantly adding new caps to our collection. Subscribe or contact us to be notified of new arrivals.
+            We're constantly adding new perfumes to our collection. Contact us to be notified of new arrivals.
           </p>
           <a
             href="https://wa.me/2348124238750?text=I%20would%20like%20to%20know%20about%20new%20perfumes%20collections%20coming%20soon."

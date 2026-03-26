@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 
 interface ClothingItemType {
   id: number;
@@ -21,8 +21,8 @@ const clothingItems: ClothingItemType[] = [
     category: 'gown',
     description: `Statement kaftan-style gown made from brocade fabric 
 perfect for cultural gatherings, elegant outings, and everyday luxury.
-This isn’t just fashion.
-It’s heritage in motion. 💛`,
+This isn't just fashion.
+It's heritage in motion. 💛`,
   },
   {
     id: 2,
@@ -32,8 +32,8 @@ It’s heritage in motion. 💛`,
     category: 'gown',
     description: `Statement kaftan-style gown made from brocade fabric 
 perfect for cultural gatherings, elegant outings, and everyday luxury.
-This isn’t just fashion.
-It’s heritage in motion. 💛`,
+This isn't just fashion.
+It's heritage in motion. 💛`,
   },
   {
     id: 6,
@@ -53,8 +53,8 @@ Perfect for outings, errands, events, or days you want for effortless class.`,
     category: 'gown',
     description: `Statement kaftan-style gown made from brocade fabric 
       perfect for cultural gatherings, elegant outings, and everyday luxury.
-      This isn’t just fashion.
-      It’s heritage in motion. 💛`,
+      This isn't just fashion.
+      It's heritage in motion. 💛`,
   },
   {
     id: 8,
@@ -91,7 +91,7 @@ Perfect for outings, errands, events, or days you want for effortless class.`,
     price: 25000,
     image: "/images/clothing_12.png",
     category: 'gown',
-    description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn’t just fashion.\nIt’s heritage in motion. 💛`,
+    description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn't just fashion.\nIt's heritage in motion. 💛`,
   },
   {
     id: 12,
@@ -99,7 +99,7 @@ Perfect for outings, errands, events, or days you want for effortless class.`,
     price: 25000,
     image: "/images/clothing_13.png",
     category: 'gown',
-    description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn’t just fashion.\nIt’s heritage in motion. 💛`,
+    description: `Brocade fabric\nperfect for cultural gatherings, elegant outings, and everyday luxury.\nThis isn't just fashion.\nIt's heritage in motion. 💛`,
   },
 ];
 
