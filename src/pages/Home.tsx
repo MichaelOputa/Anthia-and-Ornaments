@@ -65,8 +65,8 @@ export default function Home() {
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', justifyContent: 'center' }}>
             <Link to="/jewelry" style={btnGold}>Shop Jewelry <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
             <Link to="/clothing" style={btnOutline}>Shop Clothing <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
-            <Link to="/wristwatches" style={btnOutline}>Wristwatches <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
-            <Link to="/eyeglasses" style={btnGold}>Eyeglasses <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
+            <Link to="/wristwatches" style={btnOutline}>Shop Wristwatches <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
+            <Link to="/eyeglasses" style={btnGold}>Shop Eyeglasses <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
           </div>
         </div>
       </section>
