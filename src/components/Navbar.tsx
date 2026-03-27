@@ -1,21 +1,29 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Search } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Logo from './Logo';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
       navigate(`/search?q=${encodeURIComponent(searchQuery)}`);
       setSearchQuery('');
+      setIsOpen(false);
     }
   };
 
@@ -24,7 +32,7 @@ export default function Navbar() {
     { name: 'Jewelry', path: '/jewelry' },
     { name: 'Perfumes', path: '/perfumes' },
     { name: 'Clothing', path: '/clothing' },
-    {name: 'Wristwatches', path: '/wristwatches' },
+    { name: 'Wristwatches', path: '/wristwatches' },
     { name: 'Eyeglasses', path: '/eyeglasses' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'About', path: '/about' },
@@ -32,86 +40,99 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full bg-black/95 backdrop-blur-sm shadow-lg z-50 border-b border-amber-600">
+    <nav style={{
+      position: 'fixed', width: '100%', zIndex: 50,
+      background: scrolled ? 'rgba(8,8,8,0.99)' : 'rgba(8,8,8,0.93)',
+      backdropFilter: 'blur(18px)',
+      borderBottom: '1px solid rgba(201,168,76,0.22)',
+      boxShadow: scrolled ? '0 4px 40px rgba(0,0,0,0.7)' : 'none',
+      transition: 'all 0.3s ease',
+    }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <Link to="/" className="flex flex-col items-start">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '72px' }}>
+          <Link to="/" style={{ textDecoration: 'none' }}>
             <Logo />
           </Link>
 
-          <div className="hidden lg:flex items-center space-x-6 flex-1 ml-12">
+          {/* Desktop nav */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: 1, marginLeft: '32px' }} className="hidden lg:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(link.path)
-                    ? 'text-amber-400'
-                    : 'text-gray-200 hover:text-amber-400'
-                }`}
+                style={{
+                  fontSize: '0.72rem',
+                  fontWeight: 600,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: isActive(link.path) ? '#C9A84C' : '#9a8860',
+                  textDecoration: 'none',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap',
+                }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#E8C96A')}
+                onMouseLeave={e => { if (!isActive(link.path)) e.currentTarget.style.color = '#9a8860'; }}
               >
                 {link.name}
               </Link>
             ))}
           </div>
 
-          <form onSubmit={handleSearch} className="hidden md:flex items-center">
-            <div className="relative">
+          {/* Search */}
+          <form onSubmit={handleSearch} className="hidden md:flex" style={{ marginLeft: '16px' }}>
+            <div style={{ position: 'relative' }}>
               <input
                 type="text"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search products..."
-                className="px-4 py-2 text-sm bg-gray-900 text-white rounded-lg focus:outline-none focus:bg-gray-800 focus:ring-2 focus:ring-amber-500 w-48"
+                onChange={e => setSearchQuery(e.target.value)}
+                placeholder="Search..."
+                style={{
+                  padding: '7px 32px 7px 12px',
+                  fontSize: '0.78rem',
+                  background: 'rgba(201,168,76,0.07)',
+                  border: '1px solid rgba(201,168,76,0.22)',
+                  borderRadius: '6px',
+                  color: '#e8dfc0',
+                  outline: 'none',
+                  width: '140px',
+                  fontFamily: 'Jost, sans-serif',
+                }}
               />
-              <button
-                type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-amber-400"
-              >
-                <Search className="h-4 w-4" />
+              <button type="submit" style={{ position: 'absolute', right: '8px', top: '50%', transform: 'translateY(-50%)', color: '#C9A84C', background: 'none', border: 'none', cursor: 'pointer', padding: 0, display: 'flex' }}>
+                <Search size={14} />
               </button>
             </div>
           </form>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-800 text-white"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {/* Mobile toggle */}
+          <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden" style={{ color: '#C9A84C', background: 'none', border: 'none', cursor: 'pointer', padding: '4px' }}>
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
+      {/* Mobile menu */}
       {isOpen && (
-        <div className="lg:hidden bg-gray-900 border-t border-amber-600">
-          <div className="px-4 py-4 space-y-3">
-            <form onSubmit={handleSearch} className="md:hidden mb-4">
-              <div className="relative">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search products..."
-                  className="w-full px-4 py-2 text-sm bg-gray-800 text-white rounded-lg focus:outline-none focus:bg-gray-700 focus:ring-2 focus:ring-amber-500 placeholder-gray-400"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-amber-400"
-                >
-                  <Search className="h-4 w-4" />
+        <div style={{ background: '#0a0800', borderTop: '1px solid rgba(201,168,76,0.15)' }}>
+          <div style={{ padding: '16px' }}>
+            <form onSubmit={handleSearch} style={{ marginBottom: '12px' }}>
+              <div style={{ position: 'relative' }}>
+                <input type="text" value={searchQuery} onChange={e => setSearchQuery(e.target.value)} placeholder="Search products..."
+                  style={{ width: '100%', padding: '10px 36px 10px 12px', fontSize: '0.9rem', background: 'rgba(201,168,76,0.07)', border: '1px solid rgba(201,168,76,0.2)', borderRadius: '8px', color: '#e8dfc0', outline: 'none', boxSizing: 'border-box' }} />
+                <button type="submit" style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', color: '#C9A84C', background: 'none', border: 'none', cursor: 'pointer' }}>
+                  <Search size={15} />
                 </button>
               </div>
             </form>
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-lg text-base font-medium ${
-                  isActive(link.path)
-                    ? 'bg-amber-900/20 text-amber-400'
-                    : 'text-gray-200 hover:bg-gray-800'
-                }`}
+              <Link key={link.path} to={link.path} onClick={() => setIsOpen(false)}
+                style={{
+                  display: 'block', padding: '10px 12px', borderRadius: '6px', marginBottom: '2px',
+                  fontSize: '0.82rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  background: isActive(link.path) ? 'rgba(201,168,76,0.12)' : 'transparent',
+                  color: isActive(link.path) ? '#C9A84C' : '#9a8860',
+                }}
               >
                 {link.name}
               </Link>

@@ -1,132 +1,112 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight, Sparkles } from 'lucide-react';
+import LazyImage from '../components/LazyImage';
+
+const gold = '#C9A84C';
+const goldLight = '#E8C96A';
 
 export default function Home() {
   const featuredItems = [
-    {
-      title: 'New Arrival',
-      description: 'Our business is growing and we now we are introducing Perfumes, best fragrance for you and everyday elegance',
-      image: '/images/perfume_1.JPG',
-      link: '/perfumes',
-    },
-    {
-      title: 'Exquisite Jewelry',
-      description: 'Handcrafted pieces that tell your story',
-      image: '/images/jewelry set.jpeg',
-      link: '/jewelry',
-    },
-    {
-      title: 'Designer Eyeglasses',
-      description: 'Premium frames for every style',
-      image: '/images/prada_2.png',
-      link: '/eyeglasses',
-    },
-    {
-      title: 'Elegant Fashion',
-      description: 'Premium clothing for the modern woman',
-      image: '/images/clothing_1.jpg',
-      link: '/clothing',
-    },
-    {
-      title: 'Luxury Wristwatches',
-      description: 'Timeless designs to elevate your look',
-      image: '/images/chanel_3.jpg',
-      link: '/wristwatches',
-    },
+    { title: 'New Arrival', description: 'Perfumes — best fragrance for everyday elegance', image: '/images/perfume_1.JPG', link: '/perfumes' },
+    { title: 'Exquisite Jewelry', description: 'Handcrafted pieces that tell your story', image: '/images/jewelry set.jpeg', link: '/jewelry' },
+    { title: 'Designer Eyeglasses', description: 'Premium frames for every style', image: '/images/prada_2.png', link: '/eyeglasses' },
+    { title: 'Elegant Fashion', description: 'Premium clothing for the modern woman', image: '/images/clothing_1.jpg', link: '/clothing' },
+    { title: 'Luxury Wristwatches', description: 'Timeless designs to elevate your look', image: '/images/chanel_3.jpg', link: '/wristwatches' },
   ];
 
-  return (
-    <div className="min-h-screen">
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-white to-stone-50">
-        <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/1927769/pexels-photo-1927769.jpeg?auto=compress&cs=tinysrgb&w=1920')] bg-cover bg-center opacity-10"></div>
+  const btnGold: React.CSSProperties = {
+    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+    padding: '13px 28px', borderRadius: '8px', fontWeight: 600, fontSize: '0.88rem',
+    letterSpacing: '0.06em', textTransform: 'uppercase', textDecoration: 'none',
+    background: `linear-gradient(135deg, ${gold}, ${goldLight})`,
+    color: '#080808', transition: 'all 0.2s', boxShadow: '0 0 24px rgba(201,168,76,0.3)',
+  };
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="flex items-center justify-center mb-6">
-            <Sparkles className="h-8 w-8 text-amber-600 animate-pulse" />
+  const btnOutline: React.CSSProperties = {
+    display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+    padding: '13px 28px', borderRadius: '8px', fontWeight: 600, fontSize: '0.88rem',
+    letterSpacing: '0.06em', textTransform: 'uppercase', textDecoration: 'none',
+    background: 'transparent', color: gold,
+    border: `1px solid rgba(201,168,76,0.4)`, transition: 'all 0.2s',
+  };
+
+  return (
+    <div style={{ minHeight: '100vh', background: '#080808' }}>
+      {/* Hero */}
+      <section style={{
+        position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        background: 'radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, #080808 65%)',
+        overflow: 'hidden',
+      }}>
+        {/* Decorative gold lines */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60L60 0M0 0l60 60' stroke='rgba(201,168,76,0.04)' stroke-width='1'/%3E%3C/svg%3E")`, backgroundSize: '60px 60px', pointerEvents: 'none' }} />
+
+        <div style={{ position: 'relative', zIndex: 10, textAlign: 'center', padding: '0 16px', maxWidth: '860px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '24px' }}>
+            <Sparkles style={{ color: gold, width: 32, height: 32, animation: 'pulse 2s infinite' }} />
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-gray-900 mb-6">
+          <h1 style={{
+            fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(3rem, 8vw, 6rem)',
+            fontWeight: 300, lineHeight: 1.05, marginBottom: '20px',
+            background: `linear-gradient(135deg, #e8dfc0 30%, ${gold} 60%, ${goldLight} 100%)`,
+            WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text',
+          }}>
             Anthia & Ornaments
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light">
-            Jewelry • Wristwatches • Eyewear • Clothing • Fabrics • Slides
+          <p style={{ fontSize: 'clamp(0.95rem, 2vw, 1.15rem)', color: '#6b5e3a', marginBottom: '12px', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 500 }}>
+            Jewelry · Wristwatches · Eyewear · Clothing
+          </p>
+          <p style={{ fontSize: '1rem', color: '#4a3e22', marginBottom: '44px', lineHeight: 1.8, maxWidth: '520px', margin: '0 auto 44px' }}>
+            A unisex online store curating intentional pieces designed for everyday elegance and meaningful moments. <em style={{ color: gold }}>...occasions made better</em>
           </p>
 
-          <p className="text-lg text-gray-600 mb-12">
-            A unisex online store curating intentional pieces designed for everyday elegance and meaningful moments.
-            ...occasions made better
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              to="/jewelry"
-              className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl font-medium"
-            >
-              Shop Jewelry
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Link>
-            <Link
-              to="/clothing"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-900 rounded-lg transition-colors font-medium"
-            >
-              Shop Clothing
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Link>
-            <Link
-              to="/eyeglasses"
-              className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl font-medium"
-            >
-              Shop Eyeglasses
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Link>
-            <Link
-              to="/wristwatches"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-900 rounded-lg transition-colors font-medium"
-            >
-              Shop Wristwatches
-              <ChevronRight className="ml-2 h-5 w-5" />
-            </Link>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', justifyContent: 'center' }}>
+            <Link to="/jewelry" style={btnGold}>Shop Jewelry <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
+            <Link to="/clothing" style={btnOutline}>Shop Clothing <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
+            <Link to="/wristwatches" style={btnOutline}>Wristwatches <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
+            <Link to="/eyeglasses" style={btnGold}>Eyeglasses <ChevronRight size={16} style={{ marginLeft: 6 }} /></Link>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
+      {/* Featured Collections */}
+      <section style={{ padding: '100px 16px', background: '#080808' }}>
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-4">
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: gold, marginBottom: '12px' }}>
+              Curated for You
+            </p>
+            <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: 400, color: '#e8dfc0', marginBottom: '0' }}>
               Featured Collections
             </h2>
-            <p className="text-lg text-gray-600">
-              Discover our curated selection of luxury pieces
-            </p>
+            <hr style={{ border: 'none', height: '1px', background: `linear-gradient(90deg, transparent, ${gold}, transparent)`, opacity: 0.3, maxWidth: '300px', margin: '20px auto 0' }} />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {featuredItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.link}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-shadow"
+                style={{ textDecoration: 'none', display: 'block', borderRadius: '16px', overflow: 'hidden', position: 'relative', border: '1px solid rgba(201,168,76,0.1)', transition: 'border-color 0.3s' }}
+                onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(201,168,76,0.35)')}
+                onMouseLeave={e => (e.currentTarget.style.borderColor = 'rgba(201,168,76,0.1)')}
+                className="group"
               >
-                <div className="aspect-[3/4] bg-gradient-to-br from-amber-100 to-stone-200 relative overflow-hidden">
-                  <img
+                <div style={{ aspectRatio: '3/4', position: 'relative', overflow: 'hidden', background: '#111' }}>
+                  <LazyImage
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.display = 'none';
-                    }}
+                    style={{ width: '100%', height: '100%', transition: 'transform 0.5s ease' }}
+                    className="group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
-                    <h3 className="text-2xl font-serif font-bold mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm opacity-90">{item.description}</p>
-                    <div className="mt-4 flex items-center text-amber-300 group-hover:translate-x-2 transition-transform">
-                      <span className="text-sm font-medium">Explore</span>
-                      <ChevronRight className="ml-1 h-4 w-4" />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.1) 60%)', zIndex: 1 }} />
+                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '28px', zIndex: 2 }}>
+                    <h3 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: '1.5rem', fontWeight: 600, color: '#e8dfc0', marginBottom: '6px' }}>{item.title}</h3>
+                    <p style={{ fontSize: '0.82rem', color: '#9a8860', marginBottom: '12px' }}>{item.description}</p>
+                    <div style={{ display: 'flex', alignItems: 'center', color: gold, fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                      Explore <ChevronRight size={14} style={{ marginLeft: 4, transition: 'transform 0.2s' }} />
                     </div>
                   </div>
                 </div>
@@ -136,21 +116,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-amber-50 to-stone-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
+      {/* Brand story strip */}
+      <section style={{ padding: '80px 16px', background: 'linear-gradient(135deg, #0e0900 0%, #080808 100%)', borderTop: '1px solid rgba(201,168,76,0.1)', borderBottom: '1px solid rgba(201,168,76,0.1)' }}>
+        <div className="max-w-4xl mx-auto" style={{ textAlign: 'center' }}>
+          <h2 style={{ fontFamily: 'Cormorant Garamond, serif', fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 300, color: '#e8dfc0', marginBottom: '20px' }}>
             Where Elegance Meets Tradition
           </h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-            Each piece in our collection is carefully crafted to celebrate the beauty and richness of Nigerian culture.
-            From stunning jewelry to elegant fashion, we bring you the finest in luxury accessories.
+          <p style={{ fontSize: '1rem', color: '#6b5e3a', lineHeight: 1.9, maxWidth: '600px', margin: '0 auto 28px' }}>
+            Each piece in our collection is carefully curated to celebrate beauty, quality, and Nigerian culture — from stunning jewelry to elegant fashion.
           </p>
-          <Link
-            to="/about"
-            className="inline-flex items-center text-amber-600 hover:text-amber-700 font-medium"
-          >
-            Learn More About Us
-            <ChevronRight className="ml-1 h-5 w-5" />
+          <Link to="/about" style={{ display: 'inline-flex', alignItems: 'center', color: gold, fontSize: '0.82rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none' }}>
+            Learn More About Us <ChevronRight size={15} style={{ marginLeft: 4 }} />
           </Link>
         </div>
       </section>
