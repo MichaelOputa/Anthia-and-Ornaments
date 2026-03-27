@@ -18,6 +18,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setIsOpen(false);
+    };
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -55,7 +67,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flex: 1, marginLeft: '32px' }} className="hidden lg:flex">
+          <div className="hidden lg:flex lg:items-center lg:gap-5 lg:flex-1 lg:ml-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
