@@ -7,6 +7,16 @@ const gold = '#C9A84C';
 const INITIAL_COUNT = 8;
 
 const wristwatchItems = [
+  { name: 'Audemars Piguet Royal Oak', category: 'Audemars Piguet', description: 'Iconic design with a distinctive octagonal case.', image: '/images/wristwatch_3.jpeg', price: '₦120,000' },
+  { name: 'Audemars Piguet Royal Oak Green Dial Luxury Automatic Watch', category: 'Audemars Piguet', description: 'Green dial with luxury automatic movement.', image: '/images/wristwatch_4.jpeg', price: '₦120,000' },
+  { name: 'Audemars Piguet Royal Oak Selfwinding', category: 'Audemars Piguet', description: 'Features a blue dial with the signature Grande Tapisserie pattern', image: '/images/wristwatch_5.jpeg', price: '₦120,000' },
+  { name: 'Audemars Piguet Royal Oak Offshore', category: 'Audemars Piguet', description: 'Sporty and robust design with a larger case size.', image: '/images/wristwatch_6.jpeg', price: '₦120,000' },
+  { name: 'Audemars Piguet Royal Oak', category: 'Audemars Piguet', description: 'Iconic design with a distinctive octagonal case.', image: '/images/wristwatch_7.jpeg', price: '₦120,000' },
+  { name: 'Audemars Piguet Royal Oak Green', category: 'Audemars Piguet', description: 'Green dial with luxury automatic movement.', image: '/images/wristwatch_8.jpeg', price: '₦120,000' },
+  { name: 'Audemars Piguet Royal Oak "Jumbo"', category: 'Audemars Piguet', description: 'Designed by Gérald Genta, integrated stainless steel bracelet, and a blue dial with a "Petite Tapisserie" pattern. ', image: '/images/wristwatch_9.jpeg', price: '₦120,000' },
+  { name: 'Audemars Piguet Royal Oak Chronograph', category: 'Audemars Piguet', description: 'Chronograph function with a sporty design.', image: '/images/wristwatch_10.jpeg', price: '₦120,000' },
+  { name: 'Audemars Piguet Royal Oak 15500ST', category: 'Audemars Piguet', description: 'Features a 41mm case and the latest in-house movement.', image: '/images/wristwatch_11.jpeg', price: '₦120,000' },
+  { name: 'Audemars Piguet Royal Oak Selfwinding 41mm', category: 'Audemars Piguet', description: '41mm case with a self-winding movement.', image: '/images/wristwatch_12.jpeg', price: '₦120,000' },
   { name: 'Unisex Cartier Medium', category: 'Cartier', description: 'Luxurious presence on the wrist. Soft noise. Fully boxed.', image: '/images/Cartier_1.jpg', price: '₦140,000' },
   { name: 'Unisex Cartier Medium', category: 'Cartier', description: 'Luxurious presence on the wrist. Soft noise. Fully boxed.', image: '/images/Cartier_2.jpg', price: '₦140,000' },
   { name: 'Unisex Cartier Medium', category: 'Cartier', description: 'Luxurious presence on the wrist. Soft noise. Fully boxed.', image: '/images/cartier_3.jpg', price: '₦140,000' },
