@@ -30,6 +30,7 @@ export default function LazyImage({ src, alt, className = '', style, onError, ea
     // Check if already in viewport synchronously
     const rect = el.getBoundingClientRect();
     if (rect.top < window.innerHeight + 400) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setInView(true);
       return;
     }
