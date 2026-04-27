@@ -159,7 +159,6 @@ export default function Home() {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', justifyContent: 'center' }}>
               {[
                 { label: 'Wristwatches', to: '/wristwatches' },
-                { label: 'Perfumes', to: '/perfumes' },
                 { label: 'Clothing', to: '/clothing' },
               ].map(({ label, to }) => (
                 <Link key={to} to={to} style={{
