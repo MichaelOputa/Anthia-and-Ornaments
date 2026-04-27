@@ -50,7 +50,6 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Jewelry', path: '/jewelry' },
-    { name: 'Perfumes', path: '/perfumes' },
     { name: 'Clothing', path: '/clothing' },
     { name: 'Wristwatches', path: '/wristwatches' },
     { name: 'Eyeglasses', path: '/eyeglasses' },

@@ -21,19 +21,46 @@ const wristwatchItems = [
   { name: 'Unisex Cartier Medium', category: 'Cartier', description: 'Luxurious presence on the wrist. Soft noise. Fully boxed.', image: '/images/Cartier_2.jpg', price: '₦140,000' },
   { name: 'Unisex Cartier Medium', category: 'Cartier', description: 'Luxurious presence on the wrist. Soft noise. Fully boxed.', image: '/images/cartier_3.jpg', price: '₦140,000' },
   { name: 'Unisex Cartier Medium', category: 'Cartier', description: 'Luxurious presence on the wrist. Soft noise. Fully boxed.', image: '/images/cartier_4.jpg', price: '₦140,000' },
+  { name: 'Tissot PRX Quartz', category: 'Tissot', description: 'Sleek and modern design with a stainless steel case and bracelet.', image: '/images/Tissot_1.jpeg', price: '₦65,000' },
+  { name: 'Tissot PRX Swiss Quartz', category: 'Tissot', description: 'Sleek and modern design with a stainless steel case and bracelet.', image: '/images/Tissot_2.jpeg', price: '₦65,000' },
+  { name: 'Tissot PRX', category: 'Tissot', description: 'Sleek and modern design with a stainless steel case and bracelet.', image: '/images/Tissot_3.jpeg', price: '₦65,000' },
+  { name: 'Tissot PRX', category: 'Tissot', description: 'Sleek and modern design with a stainless steel case and bracelet.', image: '/images/Tissot_4.jpeg', price: '₦65,000' },
+  { name: 'High Quality T5 Watch', category: 'T5', description: `CHRONOGRAPH
+WATER RESISTANCE
+COMES IN A BRANDED BAG
+LEATHER AND CHAIN STRAP`, image: '/images/t_1.jpeg', price: '₦65,000' },
+  { name: 'High Quality T5 Watch', category: 'T5', description: `CHRONOGRAPH
+WATER RESISTANCE
+COMES IN A BRANDED BAG
+LEATHER AND CHAIN STRAP`, image: '/images/t_2.jpeg', price: '₦65,000' },
+  { name: 'High Quality T5 Watch', category: 'T5', description: `CHRONOGRAPH
+WATER RESISTANCE
+COMES IN A BRANDED BAG
+LEATHER AND CHAIN STRAP`, image: '/images/t_3.jpeg', price: '₦65,000' },
+  { name: 'High Quality T5 Watch', category: 'T5', description: `CHRONOGRAPH
+WATER RESISTANCE
+COMES IN A BRANDED BAG
+LEATHER AND CHAIN STRAP`, image: '/images/t_4.jpeg', price: '₦65,000' },
+  { name: 'High Quality T5 Watch', category: 'T5', description: `CHRONOGRAPH
+WATER RESISTANCE
+COMES IN A BRANDED BAG
+LEATHER AND CHAIN STRAP`, image: '/images/t_5.jpeg', price: '₦65,000' },
+  {name: 'High Quality T5 Watch', category: 'T5', description: `CHRONOGRAPH
+WATER RESISTANCE
+COMES IN A BRANDED BAG
+LEATHER AND CHAIN STRAP`, image: '/images/t_6.jpeg', price: '₦65,000' },
+  {name: 'High Quality T5 Watch', category: 'T5', description: `CHRONOGRAPH
+    WATER RESISTANCE
+    COMES IN A BRANDED BAG
+    LEATHER AND CHAIN STRAP`, image: '/images/t_7.jpeg', price: '₦65,000' },
+    {name: 'High Quality T5 Watch', category: 'T5', description: `CHRONOGRAPH
+    WATER RESISTANCE
+    COMES IN A BRANDED BAG
+    LEATHER AND CHAIN STRAP`, image: '/images/t_8.jpeg', price: '₦65,000' },
   { name: 'The Chanel Wristwatch', category: 'Chanel', description: 'Bold and sophisticated wristwatch design.', image: '/images/chanel_1.jpg', price: '₦180,000' },
   { name: 'The Chanel Wristwatch', category: 'Chanel', description: 'Bold and sophisticated wristwatch design.', image: '/images/chanel_2.jpg', price: '₦180,000' },
   { name: 'The Chanel Wristwatch', category: 'Chanel', description: 'Bold and sophisticated wristwatch design.', image: '/images/chanel_3.jpg', price: '₦180,000' },
   { name: 'Daniel Wellington Wristwatch', category: 'Daniel Wellington', description: 'Classic and versatile for everyday elegance.', image: '/images/DW.jpg', price: '₦25,000' },
-  { name: 'POEDAGAR Leather Wristwatch', category: 'Poedagar', description: 'Waterproof with sapphire glass. Branded box, warranty card & carrier bag.', image: '/images/poedagar_1.jpg', price: '₦40,000' },
-  { name: 'POEDAGAR Leather Wristwatch', category: 'Poedagar', description: 'Waterproof with sapphire glass. Branded box, warranty card & carrier bag.', image: '/images/poedagar_2.jpg', price: '₦40,000' },
-  { name: 'POEDAGAR Leather Wristwatch', category: 'Poedagar', description: 'Waterproof with sapphire glass. Branded box, warranty card & carrier bag.', image: '/images/poedagar_3.jpg', price: '₦40,000' },
-  { name: 'POEDAGAR Leather Wristwatch', category: 'Poedagar', description: 'Waterproof with sapphire glass. Branded box, warranty card & carrier bag.', image: '/images/poedagar_4.jpg', price: '₦40,000' },
-  { name: 'POEDAGAR Leather Wristwatch', category: 'Poedagar', description: 'Waterproof with sapphire glass. Branded box, warranty card & carrier bag.', image: '/images/poedagar_5.jpg', price: '₦40,000' },
-  { name: 'POEDAGAR Leather Wristwatch', category: 'Poedagar', description: 'Waterproof with sapphire glass. Branded box, warranty card & carrier bag.', image: '/images/poedagar_6.jpg', price: '₦40,000' },
-  { name: 'POEDAGAR Leather Wristwatch', category: 'Poedagar', description: 'Waterproof with sapphire glass. Branded box, warranty card & carrier bag.', image: '/images/poedagar_7.jpg', price: '₦40,000' },
-  { name: 'POEDAGAR Leather Wristwatch', category: 'Poedagar', description: 'Waterproof with sapphire glass. Branded box, warranty card & carrier bag.', image: '/images/poedagar_8.jpg', price: '₦40,000' },
-  { name: 'Anthiaornaments | POEDAGAR', category: 'Poedagar', description: 'Chronograph-inspired, leather-finished. Built for structure, designed for everyday precision.', image: '/images/poedagar_9.jpeg', price: '₦35,000' },
   { name: 'The Tomi Signature Gentleman Set', category: 'Tomi', description: 'For the man who likes his style clean, intentional, and timeless. No noise. Just class.', image: '/images/Tomi_1.jpg', price: '₦40,000' },
   { name: 'Vacheron Constantin', category: 'Vacheron', description: 'Sleek design with a refined finish that speaks presence and precision.', image: '/images/Vacheron_1.jpg', price: '₦125,000' },
   { name: 'Vacheron Constantin', category: 'Vacheron', description: 'Sleek design with a refined finish that speaks presence and precision.', image: '/images/Vacheron_2.jpg', price: '₦125,000' },
@@ -47,7 +74,6 @@ const wristwatchItems = [
   { name: 'Vacheron Constantin', category: 'Vacheron', description: 'Sleek design with a refined finish.', image: '/images/Vacheron_10.jpg', price: '₦125,000' },
   { name: '✨ THE ROLEX EDIT ✨', category: 'Rolex', description: 'For legacy. For presence. For quiet authority. A Rolex doesn\'t chase attention — it arrives with it.', image: '/images/rolex.jpeg', price: '₦22,000' },
   { name: 'Rolex Oyster Perpetual Day-Date', category: 'Rolex', description: 'A timeless masterpiece combining elegance with precision.', image: '/images/rolex-1.jpeg', price: '₦45,000 box inclusive' },
-  { name: 'Casio Quartz Wristwatch Set', category: 'Casio', description: 'Sleek Casio quartz watch paired with a matching bracelet.', image: '/images/casio.jpeg', price: '₦35,000 box inclusive' },
 ];
 
 export default function Wristwatches() {

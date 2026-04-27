@@ -19,7 +19,6 @@ export default function Home() {
     { title: 'Jewelry', description: 'Handcrafted pieces that tell your story', image: '/images/jewelry set.jpeg', link: '/jewelry' },
     { title: 'Wristwatches', description: 'Timeless designs to elevate your look', image: '/images/chanel_3.jpg', link: '/wristwatches' },
     { title: 'Fashion', description: 'Premium clothing for the modern woman', image: '/images/clothing_1.jpg', link: '/clothing' },
-    { title: 'Perfumes', description: 'Best fragrances for everyday elegance', image: '/images/perfume_1.JPG', link: '/perfumes' },
     { title: 'Eyeglasses', description: 'Premium frames for every style', image: '/images/prada_2.png', link: '/eyeglasses' },
   ];
 
