@@ -14,6 +14,7 @@ import Search from './pages/Search';
 import Perfumes from './pages/Perfumes';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminLogin from './pages/AdminLogin';
+import AdminResetPassword from './pages/AdminResetPassword';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import { ProductProvider } from './context/ProductContext';
@@ -45,6 +46,7 @@ function AppLayout() {
           }
         />
         <Route path="/admin/login" element={<AdminLogin />} />
+        <Route path="/admin/reset-password" element={<AdminResetPassword />} />
       </Routes>
       {!isAdminRoute && <Footer />}
       {!isAdminRoute && <WhatsAppButton />}

@@ -99,6 +99,10 @@ To enable cloud mode:
 
 Use **Sync Seed to Cloud** in the dashboard to add the sample products once. The operation skips sample products already synced.
 
+### Reset the Admin Password
+
+On `/admin/login`, enter the admin email and select **Forgot password? Send reset link**. Open the Supabase email on the same computer, follow its link, and set a new password on `/admin/reset-password`. For local development, add `http://127.0.0.1:5173/admin/reset-password` to Supabase **Authentication > URL Configuration > Redirect URLs** if it is not already allowed. Never store admin passwords in the repository or share them in chat.
+
 ### 5. Change Color Scheme
 
 The site uses Tailwind CSS with these primary colors:

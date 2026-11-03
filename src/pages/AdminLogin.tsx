@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Lock, Mail, ArrowRight, ShieldCheck, Database, AlertCircle, Sparkles } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { supabase } from '../lib/supabase';
 
 const gold = '#C9A84C';
 
@@ -12,6 +13,7 @@ export default function AdminLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
   // If already logged in, redirect directly to /admin
@@ -34,6 +36,32 @@ export default function AdminLogin() {
     } catch (err: unknown) {
       const message = err instanceof Error ? err.message : 'Login failed';
       setError(message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const handlePasswordReset = async () => {
+    setError(null);
+    setNotice(null);
+    if (!email.trim()) {
+      setError('Enter your admin email address first.');
+      return;
+    }
+    if (!supabase) {
+      setError('Password reset requires a configured Supabase project.');
+      return;
+    }
+
+    setSubmitting(true);
+    try {
+      const { error: resetError } = await supabase.auth.resetPasswordForEmail(email.trim(), {
+        redirectTo: `${window.location.origin}/admin/reset-password`,
+      });
+      if (resetError) throw resetError;
+      setNotice('If this email has an account, Supabase will send a password reset link. Check your inbox and spam folder.');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Could not send password reset email.');
     } finally {
       setSubmitting(false);
     }
@@ -152,6 +180,22 @@ export default function AdminLogin() {
           >
             <AlertCircle size={18} style={{ flexShrink: 0 }} />
             <span>{error}</span>
+          </div>
+        )}
+        {notice && (
+          <div
+            role="status"
+            style={{
+              padding: '12px 16px',
+              borderRadius: '8px',
+              background: 'rgba(34,197,94,0.12)',
+              border: '1px solid rgba(34,197,94,0.3)',
+              color: '#4ade80',
+              fontSize: '0.84rem',
+              marginBottom: '20px',
+            }}
+          >
+            {notice}
           </div>
         )}
 
@@ -279,6 +323,27 @@ export default function AdminLogin() {
             <ArrowRight size={18} />
           </button>
         </form>
+
+        {isConfigured && (
+          <button
+            type="button"
+            onClick={handlePasswordReset}
+            disabled={submitting}
+            style={{
+              display: 'block',
+              margin: '16px auto 0',
+              padding: '6px',
+              background: 'transparent',
+              border: 'none',
+              color: gold,
+              fontSize: '0.82rem',
+              textDecoration: 'underline',
+              cursor: submitting ? 'wait' : 'pointer',
+            }}
+          >
+            {submitting ? 'Sending reset link...' : 'Forgot password? Send reset link'}
+          </button>
+        )}
 
         {/* Helpful mode note */}
         <div
