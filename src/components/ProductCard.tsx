@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { ExternalLink, MessageCircle } from 'lucide-react';
 import LazyImage from './LazyImage';
+import { formatPrice, Currency } from '../types/product';
 
 interface ProductCardProps {
   name: string;
   category?: string;
   description?: string;
+  sizes?: string[];
   price?: string | number;
+  currency?: Currency;
   image: string;
   onView: () => void;
   onInquire: () => void;
@@ -14,8 +17,25 @@ interface ProductCardProps {
 
 const gold = '#C9A84C';
 
-export default function ProductCard({ name, category, description, price, image, onView, onInquire }: ProductCardProps) {
+export default function ProductCard({
+  name,
+  category,
+  description,
+  sizes,
+  price,
+  currency = 'NGN',
+  image,
+  onView,
+  onInquire,
+}: ProductCardProps) {
   const [hovered, setHovered] = useState(false);
+
+  const formattedDisplayPrice =
+    typeof price === 'number'
+      ? price > 0
+        ? formatPrice(price, currency)
+        : undefined
+      : price;
 
   return (
     <div
@@ -92,13 +112,18 @@ export default function ProductCard({ name, category, description, price, image,
           {name}
         </h3>
         {description && (
-          <p style={{ fontSize: '0.78rem', color: '#6b5e3a', lineHeight: 1.6, whiteSpace: 'pre-line', marginBottom: price ? '10px' : '0' }}>
+          <p style={{ fontSize: '0.78rem', color: '#6b5e3a', lineHeight: 1.6, whiteSpace: 'pre-line', marginBottom: formattedDisplayPrice ? '10px' : '0' }}>
             {description.length > 120 ? description.slice(0, 120) + '…' : description}
           </p>
         )}
-        {price && (
+        {sizes && sizes.length > 0 && (
+          <p style={{ fontSize: '0.72rem', color: '#8c7d58', marginTop: '8px' }}>
+            Sizes: {sizes.join(', ')}
+          </p>
+        )}
+        {formattedDisplayPrice && (
           <p style={{ fontSize: '1rem', fontWeight: 700, color: gold, marginTop: '8px' }}>
-            {price}
+            {formattedDisplayPrice}
           </p>
         )}
       </div>

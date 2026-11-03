@@ -2,7 +2,7 @@
 
 ## Content Management Guide
 
-This website is designed for easy content updates without touching the code. Follow this guide to update images, videos, and content.
+Product catalog changes should be made in the admin dashboard at `/admin`. In Supabase mode, products and uploaded images are shared across devices. Without Supabase credentials, the dashboard runs in local preview mode and changes are saved only in the current browser.
 
 ## Folder Structure for Media Files
 
@@ -49,14 +49,10 @@ public/
 ### 1. Update Images
 
 **Jewelry Collection:**
-- Navigate to `src/pages/Jewelry.tsx`
-- Find the `jewelryItems` array
-- Replace image paths and item names as needed
+- Manage product images and details from the admin dashboard.
 
 **Clothing Collection:**
-- Navigate to `src/pages/Clothing.tsx`
-- Find the `clothingItems` array
-- Replace image paths and item names as needed
+- Manage product images and details from the admin dashboard.
 
 **Gallery:**
 - Navigate to `src/pages/Gallery.tsx`
@@ -89,21 +85,19 @@ public/
 - File: `src/components/Footer.tsx`
 - Edit the brand description
 
-### 4. Add More Items to Collections
+### 4. Manage Products
 
-To add more jewelry or clothing items:
+Use the admin dashboard to add, edit, or delete products. Product records include a collection, category, description, available sizes, price, currency (NGN or USD), and image. Uploaded product images are stored in the `product-images` Supabase bucket when cloud mode is configured.
 
-1. Add the image to the appropriate folder
-2. Open the corresponding page file
-3. Add a new object to the array:
+To enable cloud mode:
 
-```javascript
-{
-  name: 'Item Name',
-  category: 'Category',
-  image: '/images/folder/filename.jpg',
-}
-```
+1. Run `supabase/schema.sql` in the Supabase SQL Editor.
+2. Set `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in `.env`.
+3. Create an admin login under Supabase Authentication.
+4. Add that user's email to `public.admin_users` using the SQL Editor. Only allowlisted accounts can change products or upload/delete product images.
+5. Restart the development server or redeploy the site.
+
+Use **Sync Seed to Cloud** in the dashboard to add the sample products once. The operation skips sample products already synced.
 
 ### 5. Change Color Scheme
 

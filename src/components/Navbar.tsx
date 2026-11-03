@@ -53,6 +53,7 @@ export default function Navbar() {
     { name: 'Clothing', path: '/clothing' },
     { name: 'Wristwatches', path: '/wristwatches' },
     { name: 'Eyeglasses', path: '/eyeglasses' },
+    { name: 'Perfumes', path: '/perfumes' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
