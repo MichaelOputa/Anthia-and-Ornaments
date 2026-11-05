@@ -16,7 +16,6 @@ import {
   ExternalLink,
   ShoppingBag,
   Sparkles,
-  Info
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useProducts } from '../context/ProductContext';
@@ -80,10 +79,9 @@ export default function AdminDashboard() {
   const [productToDelete, setProductToDelete] = useState<Product | null>(null);
   const [isDeleting, setIsDeleting] = useState(false);
 
-  // Cloud Sync state & SQL Modal
+  // Cloud Sync state
   const [isSyncing, setIsSyncing] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
-  const [showSqlModal, setShowSqlModal] = useState(false);
 
   useEffect(() => {
     if (!isModalOpen) return;
@@ -362,25 +360,6 @@ export default function AdminDashboard() {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <button
-              onClick={() => setShowSqlModal(true)}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '8px 14px',
-                borderRadius: '8px',
-                fontSize: '0.8rem',
-                color: '#c4b58e',
-                background: 'rgba(201,168,76,0.08)',
-                border: '1px solid rgba(201,168,76,0.2)',
-                cursor: 'pointer',
-              }}
-            >
-              <Info size={14} />
-              <span>Database SQL</span>
-            </button>
-
             <Link
               to="/"
               target="_blank"
@@ -452,21 +431,6 @@ export default function AdminDashboard() {
                 </p>
               </div>
             </div>
-            <button
-              onClick={() => setShowSqlModal(true)}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '6px',
-                background: '#ca8a04',
-                color: '#080808',
-                fontWeight: 600,
-                fontSize: '0.78rem',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-            >
-              Setup Supabase
-            </button>
           </div>
         )}
 
@@ -1510,86 +1474,6 @@ export default function AdminDashboard() {
         </div>
       )}
 
-      {/* ─── SUPABASE SETUP / SQL INSTRUCTIONS MODAL ───────────────────────── */}
-      {showSqlModal && (
-        <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 110,
-            background: 'rgba(0,0,0,0.85)',
-            backdropFilter: 'blur(4px)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '20px',
-          }}
-        >
-          <div
-            style={{
-              width: '100%',
-              maxWidth: '680px',
-              maxHeight: '85vh',
-              overflowY: 'auto',
-              background: '#0e0900',
-              border: '1px solid rgba(201,168,76,0.3)',
-              borderRadius: '16px',
-              padding: '28px',
-            }}
-          >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-              <h3 style={{ fontSize: '1.25rem', color: '#e8dfc0', margin: 0, display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Database size={20} style={{ color: gold }} />
-                Supabase Backend Setup Instructions
-              </h3>
-              <button onClick={() => setShowSqlModal(false)} style={{ background: 'transparent', border: 'none', color: '#8c7d58', cursor: 'pointer' }}>
-                <X size={20} />
-              </button>
-            </div>
-
-            <div style={{ fontSize: '0.85rem', color: '#c4b58e', lineHeight: 1.6, marginBottom: '16px' }}>
-              <p>
-                To enable multi-device live cloud sync with Supabase:
-              </p>
-              <ol style={{ paddingLeft: '20px', marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
-                <li>Open your project on <a href="https://supabase.com/dashboard" target="_blank" rel="noreferrer" style={{ color: gold }}>supabase.com</a></li>
-                <li>Go to the <strong>SQL Editor</strong> tab on the left sidebar</li>
-                <li>Run the updated schema script located in <code>supabase/schema.sql</code></li>
-                <li>Go to <strong>Project Settings &gt; API</strong> and copy your Project URL and Anon Public Key</li>
-                <li>Add them to your <code>.env</code> file:
-                  <pre style={{ background: '#080808', padding: '8px', borderRadius: '6px', color: '#4ade80', marginTop: '4px' }}>
-                    VITE_SUPABASE_URL=https://xyz.supabase.co{'\n'}
-                    VITE_SUPABASE_ANON_KEY=eyJhbGciOi...
-                  </pre>
-                </li>
-                <li>Create an Admin user in Supabase under <strong>Authentication &gt; Users</strong>, then add their email to <code>public.admin_users</code> in the SQL Editor:
-                  <pre style={{ background: '#080808', padding: '8px', borderRadius: '6px', color: '#4ade80', marginTop: '4px' }}>
-                    insert into public.admin_users (email){'\n'}values ('admin@example.com'){'\n'}on conflict (email) do nothing;
-                  </pre>
-                </li>
-              </ol>
-            </div>
-
-            <div style={{ textAlign: 'right' }}>
-              <button
-                onClick={() => setShowSqlModal(false)}
-                style={{
-                  padding: '8px 18px',
-                  borderRadius: '6px',
-                  background: `linear-gradient(135deg, ${gold}, ${goldLight})`,
-                  color: '#080808',
-                  fontWeight: 600,
-                  fontSize: '0.82rem',
-                  border: 'none',
-                  cursor: 'pointer',
-                }}
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
