@@ -1,6 +1,6 @@
 import { useState, FormEvent } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Lock, Mail, ArrowRight, ShieldCheck, Database, AlertCircle, Sparkles } from 'lucide-react';
+import { Lock, Mail, ArrowRight, ShieldCheck, Database, AlertCircle, Sparkles, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabase';
 
@@ -12,6 +12,7 @@ export default function AdminLogin() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
@@ -275,14 +276,14 @@ export default function AdminLogin() {
                 }}
               />
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••••••"
                 style={{
                   width: '100%',
-                  padding: '12px 14px 12px 42px',
+                  padding: '12px 44px 12px 42px',
                   background: '#080808',
                   border: '1px solid rgba(201,168,76,0.3)',
                   borderRadius: '10px',
@@ -294,6 +295,28 @@ export default function AdminLogin() {
                 onFocus={(e) => (e.target.style.borderColor = gold)}
                 onBlur={(e) => (e.target.style.borderColor = 'rgba(201,168,76,0.3)')}
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword((visible) => !visible)}
+                aria-label={showPassword ? 'Hide password' : 'Show password'}
+                aria-pressed={showPassword}
+                style={{
+                  position: 'absolute',
+                  right: '12px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: '6px',
+                  color: '#8c7d58',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
             </div>
           </div>
 

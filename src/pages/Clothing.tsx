@@ -1,5 +1,4 @@
-import { useState, useMemo } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 import ImageModal from '../components/ImageModal';
 import ProductCard from '../components/ProductCard';
 import { useProducts } from '../context/ProductContext';
@@ -10,13 +9,7 @@ export function ClothingCollection() {
   const { getProductsByType, loading } = useProducts();
   const clothingItems = getProductsByType('clothing');
 
-  const [showAll, setShowAll] = useState(false);
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; title: string } | null>(null);
-
-  const displayed = useMemo(
-    () => (showAll ? clothingItems : clothingItems.slice(0, 6)),
-    [showAll, clothingItems]
-  );
 
   const handleWhatsApp = (name: string) => {
     window.open(
@@ -25,21 +18,6 @@ export function ClothingCollection() {
       )}`,
       '_blank'
     );
-  };
-
-  const viewMoreBtn: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px',
-    padding: '13px 36px',
-    borderRadius: '40px',
-    fontWeight: 600,
-    fontSize: '0.82rem',
-    letterSpacing: '0.08em',
-    background: 'transparent',
-    color: gold,
-    border: `1px solid rgba(201,168,76,0.3)`,
-    cursor: 'pointer',
   };
 
   return (
@@ -100,7 +78,7 @@ export function ClothingCollection() {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" style={{ marginBottom: '48px' }}>
-              {displayed.map((item) => (
+              {clothingItems.map((item) => (
                 <ProductCard
                   key={item.id}
                   name={item.name}
@@ -117,17 +95,6 @@ export function ClothingCollection() {
             </div>
           )}
 
-          {clothingItems.length > 6 && (
-            <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <button onClick={() => setShowAll(!showAll)} style={viewMoreBtn}>
-                {showAll ? (
-                  <>View Less <ChevronUp size={16} /></>
-                ) : (
-                  <>View More ({clothingItems.length - 6} more) <ChevronDown size={16} /></>
-                )}
-              </button>
-            </div>
-          )}
         </div>
       </section>
       <ImageModal

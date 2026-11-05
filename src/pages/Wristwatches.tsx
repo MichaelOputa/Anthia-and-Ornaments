@@ -1,24 +1,14 @@
-import { useState, useMemo } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { useState } from 'react';
 import ImageModal from '../components/ImageModal';
 import ProductCard from '../components/ProductCard';
 import { useProducts } from '../context/ProductContext';
 
 const gold = '#C9A84C';
-const INITIAL_COUNT = 8;
-
 export default function Wristwatches() {
   const { getProductsByType, loading } = useProducts();
   const wristwatchItems = getProductsByType('wristwatch');
 
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string; title: string } | null>(null);
-  const [showAll, setShowAll] = useState(false);
-
-  const displayedItems = useMemo(
-    () => (showAll ? wristwatchItems : wristwatchItems.slice(0, INITIAL_COUNT)),
-    [showAll, wristwatchItems]
-  );
-
   const handleWhatsApp = (name: string) => {
     window.open(
       `https://wa.me/2348124238750?text=${encodeURIComponent(
@@ -26,22 +16,6 @@ export default function Wristwatches() {
       )}`,
       '_blank'
     );
-  };
-
-  const viewMoreBtn: React.CSSProperties = {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '8px',
-    padding: '13px 36px',
-    borderRadius: '40px',
-    fontWeight: 600,
-    fontSize: '0.82rem',
-    letterSpacing: '0.08em',
-    background: 'transparent',
-    color: gold,
-    border: `1px solid rgba(201,168,76,0.3)`,
-    cursor: 'pointer',
-    transition: 'background 0.2s',
   };
 
   return (
@@ -102,7 +76,7 @@ export default function Wristwatches() {
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" style={{ marginBottom: '40px' }}>
-              {displayedItems.map((item) => (
+              {wristwatchItems.map((item) => (
                 <ProductCard
                   key={item.id}
                   name={item.name}
@@ -119,22 +93,6 @@ export default function Wristwatches() {
             </div>
           )}
 
-          {wristwatchItems.length > INITIAL_COUNT && (
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-              <button
-                onClick={() => setShowAll(!showAll)}
-                style={viewMoreBtn}
-                onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = 'rgba(201,168,76,0.1)')}
-                onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = 'transparent')}
-              >
-                {showAll ? (
-                  <>View Less <ChevronUp size={16} /></>
-                ) : (
-                  <>View More ({wristwatchItems.length - INITIAL_COUNT} more) <ChevronDown size={16} /></>
-                )}
-              </button>
-            </div>
-          )}
         </div>
       </section>
 

@@ -1,6 +1,6 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AlertCircle, Lock, ShieldCheck } from 'lucide-react';
+import { AlertCircle, Eye, EyeOff, Lock, ShieldCheck } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 const gold = '#C9A84C';
@@ -11,6 +11,8 @@ export default function AdminResetPassword() {
   const [validLink, setValidLink] = useState(false);
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -96,27 +98,47 @@ export default function AdminResetPassword() {
               <span style={{ position: 'relative', display: 'block', marginTop: '7px' }}>
                 <Lock size={17} style={{ position: 'absolute', left: '13px', top: '14px', color: '#6b5e3a' }} />
                 <input
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   autoComplete="new-password"
                   required
                   minLength={8}
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
-                  style={{ boxSizing: 'border-box', width: '100%', padding: '12px 14px 12px 40px', background: '#080808', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '10px', color: '#e8dfc0' }}
+                  style={{ boxSizing: 'border-box', width: '100%', padding: '12px 44px 12px 40px', background: '#080808', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '10px', color: '#e8dfc0' }}
                 />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((visible) => !visible)}
+                  aria-label={showPassword ? 'Hide new password' : 'Show new password'}
+                  aria-pressed={showPassword}
+                  style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', display: 'flex', padding: '6px', color: '#8c7d58', background: 'transparent', border: 'none', cursor: 'pointer' }}
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
               </span>
             </label>
             <label style={{ fontSize: '0.8rem', color: '#c4b58e' }}>
               Confirm new password
-              <input
-                type="password"
-                autoComplete="new-password"
-                required
-                minLength={8}
-                value={confirmPassword}
-                onChange={(event) => setConfirmPassword(event.target.value)}
-                style={{ boxSizing: 'border-box', width: '100%', marginTop: '7px', padding: '12px 14px', background: '#080808', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '10px', color: '#e8dfc0' }}
-              />
+              <span style={{ position: 'relative', display: 'block', marginTop: '7px' }}>
+                <input
+                  type={showConfirmPassword ? 'text' : 'password'}
+                  autoComplete="new-password"
+                  required
+                  minLength={8}
+                  value={confirmPassword}
+                  onChange={(event) => setConfirmPassword(event.target.value)}
+                  style={{ boxSizing: 'border-box', width: '100%', padding: '12px 44px 12px 14px', background: '#080808', border: '1px solid rgba(201,168,76,0.3)', borderRadius: '10px', color: '#e8dfc0' }}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowConfirmPassword((visible) => !visible)}
+                  aria-label={showConfirmPassword ? 'Hide confirmed password' : 'Show confirmed password'}
+                  aria-pressed={showConfirmPassword}
+                  style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', display: 'flex', padding: '6px', color: '#8c7d58', background: 'transparent', border: 'none', cursor: 'pointer' }}
+                >
+                  {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </span>
             </label>
             <button type="submit" disabled={submitting} style={{ padding: '14px 24px', marginTop: '6px', borderRadius: '10px', fontWeight: 700, background: `linear-gradient(135deg, ${gold}, #E8C96A)`, color: '#080808', border: 'none', cursor: submitting ? 'wait' : 'pointer' }}>
               {submitting ? 'Updating password...' : 'Update Password'}
